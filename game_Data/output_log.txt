@@ -14,14 +14,9 @@ Platform assembly: C:\Users\Daniel\Documents\GitHub\mhmja\game_Data\Managed\Unit
 Loading C:\Users\Daniel\Documents\GitHub\mhmja\game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Daniel\Documents\GitHub\mhmja\game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\Daniel\Documents\GitHub\mhmja\game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.041 seconds
+- Completed reload, in  0.038 seconds
 Platform assembly: C:\Users\Daniel\Documents\GitHub\mhmja\game_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Daniel\Documents\GitHub\mhmja\game_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3200x1080 at -1280,0
 <RI> Initializing input.
 <RI> Input initialized.
-<RI> Initialized touch support.
-UnloadTime: 0.904762 ms
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2f9c -> priority: 1 
