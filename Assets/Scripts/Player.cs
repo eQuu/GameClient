@@ -4,25 +4,29 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
     public float movespeed;
+
     private Rigidbody myBody;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         myBody = GetComponent<Rigidbody>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
-    void FixedUpdate()
+    void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        if (Input.GetAxis("Horizontal")!= 0)
+        {
+            transform.Rotate(Vector3.up, Input.GetAxis("Horizontal"));
+        }
+        if (Input.GetAxis("Vertical") > 0)
+        {
+            myBody.transform.position = myBody.transform.position + transform.forward * movespeed * Time.deltaTime;
+        } else if (Input.GetAxis("Vertical") < 0)
+        {
+            myBody.transform.position = myBody.transform.position - transform.forward * movespeed * Time.deltaTime;
+        }
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        myBody.AddForce(movement * movespeed);
+
     }
 }
