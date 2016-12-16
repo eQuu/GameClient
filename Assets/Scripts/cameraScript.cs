@@ -4,12 +4,15 @@ using System.Collections;
 public class cameraScript : MonoBehaviour {
 
     public GameObject myPlayer;
-    private float distance = 50.0f;
+    private float distance = 100.0f;
     private float zoomSpeed = 6.0f;
     private float currentX = 0.0f;
     private float currentY = 0.0f;
+    const float minY = -70.0f;
+    const float maxY = -1.0f;
     private float sensivityX = 4.0f;
     private float sensivityY = 1.0f;
+    private Vector3 direction;
 
     private Quaternion rotation;
 
@@ -24,6 +27,8 @@ public class cameraScript : MonoBehaviour {
         {
             currentX = currentX + Input.GetAxis("Mouse X");
             currentY = currentY + Input.GetAxis("Mouse Y");
+
+            currentY = Mathf.Clamp(currentY, minY, maxY);
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
@@ -37,11 +42,16 @@ public class cameraScript : MonoBehaviour {
     // Update is called once per frame
     void LateUpdate () {
 
-        Vector3 direction = new Vector3(0, 0, distance);
+        direction = new Vector3(0, 0, distance);
         rotation = Quaternion.Euler(currentY, currentX, 0);
         transform.position = myPlayer.transform.position + rotation * direction;
         transform.LookAt(myPlayer.transform.position);
 
+    }
+
+    public void followRotation(float playerInput)
+    {
+        this.currentX = this.currentX + playerInput;
     }
 
 }
