@@ -23,13 +23,14 @@ public class cameraScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             currentX = currentX + Input.GetAxis("Mouse X");
             currentY = currentY + Input.GetAxis("Mouse Y");
 
             currentY = Mathf.Clamp(currentY, minY, maxY);
         }
+
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             distance = distance - Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
