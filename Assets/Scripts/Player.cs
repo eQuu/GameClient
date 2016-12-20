@@ -5,6 +5,7 @@ public class Player : MonoBehaviour {
 
     public float movespeed;
     public cameraScript myCameraScript;
+    public uiScript myUiScript;
 
     private float playerInputVertical;
     private float playerInputHorizontal;
@@ -27,17 +28,16 @@ public class Player : MonoBehaviour {
         playerInputQundE = Input.GetAxis("QundE");
         playerInputJump= Input.GetAxis("Jump");
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonUp(0))
         {
             myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(myRay, out clicked))
             {
                 //TODO: Hier noch pruefen welches Objekt angeklickt wurde
-                if (clicked.transform.GetComponent<Rigidbody>() != null)
-                {
-                    clicked.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * 70);
-                }
-                
+                myUiScript.setTarget(clicked.transform);
+            } else
+            {
+                myUiScript.setTarget(null);
             }
         }
 
