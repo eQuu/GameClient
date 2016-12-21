@@ -49,6 +49,24 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\cameraScript.cs" />
      <Compile Include="Assets\Scripts\uiScript.cs" />
+     <Compile Include="Assets\VoxelMax\Source\DemoSceneScripts\BombShooter.cs" />
+     <Compile Include="Assets\VoxelMax\Source\DemoSceneScripts\BombTimer.cs" />
+     <Compile Include="Assets\VoxelMax\Source\DemoSceneScripts\Rocket.cs" />
+     <Compile Include="Assets\VoxelMax\Source\DemoSceneScripts\TankBehaviour.cs" />
+     <Compile Include="Assets\VoxelMax\Source\StaticValues.cs" />
+     <Compile Include="Assets\VoxelMax\Source\Voxel.cs" />
+     <Compile Include="Assets\VoxelMax\Source\VoxelAnimator.cs" />
+     <Compile Include="Assets\VoxelMax\Source\VoxelArea.cs" />
+     <Compile Include="Assets\VoxelMax\Source\VoxelBomb.cs" />
+     <Compile Include="Assets\VoxelMax\Source\VoxelContainer.cs" />
+     <Compile Include="Assets\VoxelMax\Source\VoxelExplosionParticle.cs" />
+     <Compile Include="Assets\VoxelMax\Source\VoxelIngameBuildTask.cs" />
+     <Compile Include="Assets\VoxelMax\Source\VoxelLayer.cs" />
+     <Compile Include="Assets\VoxelMax\Source\VoxelMeshOptimizer.cs" />
+     <Compile Include="Assets\VoxelMax\Source\VoxelPhysics.cs" />
+     <None Include="Assets\VoxelMax\ColorPalettes\Basic Palette.txt" />
+     <None Include="Assets\VoxelMax\ColorPalettes\Commondore.txt" />
+     <None Include="Assets\VoxelMax\ColorPalettes\Flora.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
