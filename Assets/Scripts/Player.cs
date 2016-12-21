@@ -21,6 +21,11 @@ public class Player : MonoBehaviour {
         myBody = GetComponent<Rigidbody>();
 	}
 
+    private bool isGrounded()
+    {
+        return Physics.Raycast(transform.position, -Vector3.up, 0.1f);
+    }
+
     void Update()
     {
         playerInputVertical = Input.GetAxis("Vertical");
@@ -33,17 +38,22 @@ public class Player : MonoBehaviour {
             myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(myRay, out clicked))
             {
-                //TODO: Hier noch pruefen welches Objekt angeklickt wurde
-                myUiScript.setTarget(clicked.transform);
+                if (clicked.transform.tag.Contains("trgt"))
+                {
+                    myUiScript.setTarget(clicked.transform);
+                } else
+                {
+                    myUiScript.setTarget(null);
+                }
             } else
             {
                 myUiScript.setTarget(null);
             }
         }
 
-        if (playerInputJump > 0)
+        if (playerInputJump > 0 && isGrounded())
         {
-            myBody.AddForce(Vector3.up * 100);
+            myBody.AddForce(Vector3.up * 40);
         }
 
         if (playerInputQundE < 0)
