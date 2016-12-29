@@ -13,12 +13,14 @@ public class playerScript : MonoBehaviour {
     private float playerInputJump;
     private RaycastHit clicked;
     private Ray myRay;
+    private Animator myAnim;
 
     private Rigidbody myBody;
 
     // Use this for initialization
     void Start () {
         myBody = GetComponent<Rigidbody>();
+        myAnim = GetComponent<Animator>();
 	}
 
     private bool isGrounded()
@@ -51,9 +53,9 @@ public class playerScript : MonoBehaviour {
             }
         }
 
-        if (playerInputJump > 0 && isGrounded())
+        if (Input.GetKeyDown("space") && isGrounded())
         {
-            myBody.AddForce(Vector3.up * 40);
+            myBody.AddForce(Vector3.up * 200);
         }
 
         if (playerInputQundE < 0)
@@ -73,9 +75,14 @@ public class playerScript : MonoBehaviour {
         if (playerInputVertical > 0)
         {
             myBody.transform.position = myBody.transform.position + transform.forward * movespeed * Time.deltaTime;
+            myAnim.SetBool("isWalking", true);
         } else if (playerInputVertical < 0)
         {
             myBody.transform.position = myBody.transform.position - transform.forward * movespeed * Time.deltaTime;
+            myAnim.SetBool("isWalking", true);
+        } else
+        {
+            myAnim.SetBool("isWalking", false);
         }
     }
 }
