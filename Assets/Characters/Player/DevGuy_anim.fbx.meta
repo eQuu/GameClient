@@ -1,0 +1,825 @@
+fileFormatVersion: 2
+guid: 00add7eafcdb2d6458fc9d8720c8fd93
+timeCreated: 1483203456
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Body
+    100002: Camera
+    100004: //RootNode
+    100006: Head
+    100008: Joint_01
+    100010: Joint_02
+    100012: Joint_03
+    100014: Joint_04
+    100016: Joint_05
+    100018: Joint_06
+    100020: Joint_07
+    100022: Joint_08
+    100024: Joint_09
+    100026: Joint_10
+    100028: Joint_11
+    100030: Joint_12
+    100032: Joint_13
+    100034: Joint_14
+    100036: Joint_15
+    100038: Joint_16
+    100040: Joint_17
+    100042: Joint_18
+    100044: Joint_19
+    100046: LeftFeet
+    100048: LeftHand
+    100050: LeftLeg
+    100052: LeftShoulder
+    100054: Marker
+    100056: RightFeet
+    100058: RightHand
+    100060: RightLeg
+    100062: RightShoulder
+    100064: Waist
+    400000: Body
+    400002: Camera
+    400004: //RootNode
+    400006: Head
+    400008: Joint_01
+    400010: Joint_02
+    400012: Joint_03
+    400014: Joint_04
+    400016: Joint_05
+    400018: Joint_06
+    400020: Joint_07
+    400022: Joint_08
+    400024: Joint_09
+    400026: Joint_10
+    400028: Joint_11
+    400030: Joint_12
+    400032: Joint_13
+    400034: Joint_14
+    400036: Joint_15
+    400038: Joint_16
+    400040: Joint_17
+    400042: Joint_18
+    400044: Joint_19
+    400046: LeftFeet
+    400048: LeftHand
+    400050: LeftLeg
+    400052: LeftShoulder
+    400054: Marker
+    400056: RightFeet
+    400058: RightHand
+    400060: RightLeg
+    400062: RightShoulder
+    400064: Waist
+    4300000: Waist
+    4300002: Body
+    4300004: LeftShoulder
+    4300006: RightShoulder
+    4300008: RightHand
+    4300010: LeftHand
+    4300012: Head
+    4300014: RightFeet
+    4300016: LeftFeet
+    4300018: RightLeg
+    4300020: LeftLeg
+    7400000: None
+    7400002: Walking
+    7400004: Jump
+    7400006: Idle
+    7400008: BackWalk
+    7400010: SideWalk_Left
+    7400012: SideWalk_Right
+    9500000: //RootNode
+    13700000: Body
+    13700002: Head
+    13700004: LeftFeet
+    13700006: LeftHand
+    13700008: LeftLeg
+    13700010: LeftShoulder
+    13700012: RightFeet
+    13700014: RightHand
+    13700016: RightLeg
+    13700018: RightShoulder
+    13700020: Waist
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: None
+      takeName: None
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Joint_01
+        weight: 1
+      - path: Joint_01/Joint_02
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04/Joint_05
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15/Joint_16
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18/Joint_19
+        weight: 1
+      - path: Joint_01/Joint_06
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08/Joint_09
+        weight: 1
+      - path: Joint_01/Joint_10
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12/Joint_13
+        weight: 1
+      - path: LeftFeet
+        weight: 1
+      - path: LeftHand
+        weight: 1
+      - path: LeftLeg
+        weight: 1
+      - path: LeftShoulder
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: RightFeet
+        weight: 1
+      - path: RightHand
+        weight: 1
+      - path: RightLeg
+        weight: 1
+      - path: RightShoulder
+        weight: 1
+      - path: Waist
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walking
+      takeName: Walking
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Joint_01
+        weight: 1
+      - path: Joint_01/Joint_02
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04/Joint_05
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15/Joint_16
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18/Joint_19
+        weight: 1
+      - path: Joint_01/Joint_06
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08/Joint_09
+        weight: 1
+      - path: Joint_01/Joint_10
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12/Joint_13
+        weight: 1
+      - path: LeftFeet
+        weight: 1
+      - path: LeftHand
+        weight: 1
+      - path: LeftLeg
+        weight: 1
+      - path: LeftShoulder
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: RightFeet
+        weight: 1
+      - path: RightHand
+        weight: 1
+      - path: RightLeg
+        weight: 1
+      - path: RightShoulder
+        weight: 1
+      - path: Waist
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jump
+      takeName: Jump
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Joint_01
+        weight: 1
+      - path: Joint_01/Joint_02
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04/Joint_05
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15/Joint_16
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18/Joint_19
+        weight: 1
+      - path: Joint_01/Joint_06
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08/Joint_09
+        weight: 1
+      - path: Joint_01/Joint_10
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12/Joint_13
+        weight: 1
+      - path: LeftFeet
+        weight: 1
+      - path: LeftHand
+        weight: 1
+      - path: LeftLeg
+        weight: 1
+      - path: LeftShoulder
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: RightFeet
+        weight: 1
+      - path: RightHand
+        weight: 1
+      - path: RightLeg
+        weight: 1
+      - path: RightShoulder
+        weight: 1
+      - path: Waist
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Joint_01
+        weight: 1
+      - path: Joint_01/Joint_02
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04/Joint_05
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15/Joint_16
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18/Joint_19
+        weight: 1
+      - path: Joint_01/Joint_06
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08/Joint_09
+        weight: 1
+      - path: Joint_01/Joint_10
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12/Joint_13
+        weight: 1
+      - path: LeftFeet
+        weight: 1
+      - path: LeftHand
+        weight: 1
+      - path: LeftLeg
+        weight: 1
+      - path: LeftShoulder
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: RightFeet
+        weight: 1
+      - path: RightHand
+        weight: 1
+      - path: RightLeg
+        weight: 1
+      - path: RightShoulder
+        weight: 1
+      - path: Waist
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BackWalk
+      takeName: BackWalk
+      firstFrame: 0
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Joint_01
+        weight: 1
+      - path: Joint_01/Joint_02
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04/Joint_05
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15/Joint_16
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18/Joint_19
+        weight: 1
+      - path: Joint_01/Joint_06
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08/Joint_09
+        weight: 1
+      - path: Joint_01/Joint_10
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12/Joint_13
+        weight: 1
+      - path: LeftFeet
+        weight: 1
+      - path: LeftHand
+        weight: 1
+      - path: LeftLeg
+        weight: 1
+      - path: LeftShoulder
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: RightFeet
+        weight: 1
+      - path: RightHand
+        weight: 1
+      - path: RightLeg
+        weight: 1
+      - path: RightShoulder
+        weight: 1
+      - path: Waist
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SideWalk_Left
+      takeName: SideWalk_Left
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Joint_01
+        weight: 1
+      - path: Joint_01/Joint_02
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04/Joint_05
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15/Joint_16
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18/Joint_19
+        weight: 1
+      - path: Joint_01/Joint_06
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08/Joint_09
+        weight: 1
+      - path: Joint_01/Joint_10
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12/Joint_13
+        weight: 1
+      - path: LeftFeet
+        weight: 1
+      - path: LeftHand
+        weight: 1
+      - path: LeftLeg
+        weight: 1
+      - path: LeftShoulder
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: RightFeet
+        weight: 1
+      - path: RightHand
+        weight: 1
+      - path: RightLeg
+        weight: 1
+      - path: RightShoulder
+        weight: 1
+      - path: Waist
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SideWalk_Right
+      takeName: SideWalk_Right
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Joint_01
+        weight: 1
+      - path: Joint_01/Joint_02
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_04/Joint_05
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_14/Joint_15/Joint_16
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18
+        weight: 1
+      - path: Joint_01/Joint_02/Joint_03/Joint_17/Joint_18/Joint_19
+        weight: 1
+      - path: Joint_01/Joint_06
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08
+        weight: 1
+      - path: Joint_01/Joint_06/Joint_07/Joint_08/Joint_09
+        weight: 1
+      - path: Joint_01/Joint_10
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12
+        weight: 1
+      - path: Joint_01/Joint_10/Joint_11/Joint_12/Joint_13
+        weight: 1
+      - path: LeftFeet
+        weight: 1
+      - path: LeftHand
+        weight: 1
+      - path: LeftLeg
+        weight: 1
+      - path: LeftShoulder
+        weight: 1
+      - path: Marker
+        weight: 1
+      - path: RightFeet
+        weight: 1
+      - path: RightHand
+        weight: 1
+      - path: RightLeg
+        weight: 1
+      - path: RightShoulder
+        weight: 1
+      - path: Waist
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

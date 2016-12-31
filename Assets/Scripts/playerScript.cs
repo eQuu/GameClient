@@ -55,7 +55,7 @@ public class playerScript : MonoBehaviour {
 
         if (Input.GetKeyDown("space") && isGrounded())
         {
-            myBody.AddForce(Vector3.up * 200);
+            myBody.AddForce(Vector3.up * 300);
         }
 
         if (playerInputQundE < 0)
