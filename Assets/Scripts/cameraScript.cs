@@ -4,9 +4,9 @@ using System.Collections;
 public class cameraScript : MonoBehaviour {
 
     public GameObject myPlayer;
-    private float distance = 1.0f;
+    private float distance = 5.0f;
     private float zoomSpeed = 1.0f;
-    private float currentX = -20.0f;
+    private float currentX = 180.0f;
     private float currentY = -15.0f;
     const float minY = -70.0f;
     const float maxY = -1.0f;

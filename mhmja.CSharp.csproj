@@ -64,8 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\cameraScript.cs" />
+    <Compile Include="Assets\Scripts\gameScript.cs" />
+    <Compile Include="Assets\Scripts\inputScript.cs" />
+    <Compile Include="Assets\Scripts\mainMenuScript.cs" />
+    <Compile Include="Assets\Scripts\networkScript.cs" />
     <Compile Include="Assets\Scripts\playerScript.cs" />
     <Compile Include="Assets\Scripts\uiScript.cs" />
+    <Compile Include="Assets\Scripts\unitScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
