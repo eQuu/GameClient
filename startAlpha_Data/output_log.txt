@@ -14,13 +14,18 @@ Platform assembly: C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\M
 Loading C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+<<<<<<< HEAD
 - Completed reload, in  0.043 seconds
+=======
+- Completed reload, in  0.042 seconds
+>>>>>>> origin/master
 Platform assembly: C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3200x1080 at -1280,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
+<<<<<<< HEAD
 UnloadTime: 0.606880 ms
 Setting up 1 worker threads for Enlighten.
   Thread -> id: 268c -> priority: 1 
@@ -59,3 +64,8 @@ remote client event disconnected
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
+=======
+UnloadTime: 0.645320 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1a24 -> priority: 1 
+>>>>>>> origin/master
