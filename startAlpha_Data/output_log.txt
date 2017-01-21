@@ -2,38 +2,81 @@ Initialize engine version: 5.4.1f1 (649f48bbbf0f)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 660   (ID=0x11c0)
-    Vendor:   NVIDIA
-    VRAM:     1989 MB
+    Renderer: AMD Radeon HD 6500M/5600/5700 Series (ID=0x68c1)
+    Vendor:   ATI
+    VRAM:     1014 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-<<<<<<< HEAD
-- Completed reload, in  0.043 seconds
-=======
-- Completed reload, in  0.042 seconds
->>>>>>> origin/master
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Wind\mhmja\startAlpha_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 60Hz; virtual: 3200x1080 at -1280,0
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.115 seconds
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\System.dll (this message is harmless)
+desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-<<<<<<< HEAD
-UnloadTime: 0.606880 ms
+UnloadTime: 1.195767 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 268c -> priority: 1 
+  Thread -> id: 20d8 -> priority: 1 
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon HD 6500M/5600/5700 Series (ID=0x68c1)
+    Vendor:   ATI
+    VRAM:     1014 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.095 seconds
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\System.dll (this message is harmless)
+desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.455873 ms
+UnloadTime: 10.654596 ms
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 304.
-Total: 0.207498 ms (FindLiveObjects: 0.031530 ms CreateObjectMapping: 0.012311 ms MarkObjects: 0.153446 ms  DeleteObjects: 0.009308 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 311.
+Total: 0.338279 ms (FindLiveObjects: 0.036570 ms CreateObjectMapping: 0.016841 ms MarkObjects: 0.262250 ms  DeleteObjects: 0.021172 ms)
+
+Socket Open. SocketId is: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+UnloadTime: 1.502287 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2260 -> priority: 1 
+Connected to server. ConnectionId: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+incoming connection event received
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 1;
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 9.289449 ms
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 311.
+Total: 0.339722 ms (FindLiveObjects: 0.037051 ms CreateObjectMapping: 0.017322 ms MarkObjects: 0.262731 ms  DeleteObjects: 0.021653 ms)
 
 Socket Open. SocketId is: 0
  
@@ -51,21 +94,8 @@ sende Nachricht: 1;
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-incoming message event received: 4;0;200
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-sende Nachricht: 3;200;0;48.8726;9.896759;-32.77168
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
 Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:777}
 remote client event disconnected
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-=======
-UnloadTime: 0.645320 ms
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1a24 -> priority: 1 
->>>>>>> origin/master

@@ -14,6 +14,7 @@ public class playerScript : MonoBehaviour {
     public playerScript(uint positionInList)
     {
         this.listPosition = positionInList;
+        this.myCharacter = Instantiate(myCharacter);
     }
 
     public uint getListPos()

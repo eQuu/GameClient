@@ -35,6 +35,9 @@ public class networkScript : MonoBehaviour {
         int maxConnections = 10;
         HostTopology topology = new HostTopology(config, maxConnections);
 
+        //TODO: Das hier wieder rausnehmen, ist bei lokalen Tests jedoch notwendig
+        socketPort = Random.Range(7000, 7900);
+
         socketId = NetworkTransport.AddHost(topology, socketPort);
         Debug.Log("Socket Open. SocketId is: " + socketId);
     }
