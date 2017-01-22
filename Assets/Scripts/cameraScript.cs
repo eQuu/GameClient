@@ -43,11 +43,13 @@ public class cameraScript : MonoBehaviour {
     // Update is called once per frame
     void LateUpdate () {
 
-        direction = new Vector3(0, 0, distance);
-        rotation = Quaternion.Euler(currentY, currentX, 0);
-        transform.position = myPlayer.transform.position + rotation * direction;
-        transform.LookAt(myPlayer.transform.position);
-
+        if (myPlayer != null)
+        {
+            direction = new Vector3(0, 0, distance);
+            rotation = Quaternion.Euler(currentY, currentX, 0);
+            transform.position = myPlayer.transform.position + rotation * direction;
+            transform.LookAt(myPlayer.transform.position);
+        }
     }
 
     public void followRotation(float playerInput)

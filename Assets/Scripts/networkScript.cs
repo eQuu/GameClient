@@ -69,8 +69,9 @@ public class networkScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         openSocket();
+        connect();
     }
-	
+
     private void checkMessages()
     {
         recNetworkEvent = NetworkTransport.Receive(out recHostId, out recConnectionId, out recChannelId, recBuffer, bufferSize, out dataSize, out error);
@@ -87,6 +88,8 @@ public class networkScript : MonoBehaviour {
                 break;
             case NetworkEventType.ConnectEvent:
                 Debug.Log("incoming connection event received");
+                //Wenn wir verbunden sind fragen wir den Server nach unserer Position in der Liste
+                sendMessage("1;");
                 break;
             case NetworkEventType.DataEvent:
                 stream = new MemoryStream(recBuffer);
@@ -110,18 +113,10 @@ public class networkScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	    if (Input.GetKeyDown("c")) {
-            connect();
-        }
         if (Input.GetKeyDown("b"))
         {
             disconnect();
         }
-        if (Input.GetKeyDown("x"))
-        {
-            sendMessage("1;");
-        }
-
         checkMessages();
     }
 }

@@ -17,6 +17,9 @@ public class gameScript : MonoBehaviour {
     private uint myPosInList;
     private uint myPlayerId;
     //Game
+    public GameObject playerPrefab;
+    public cameraScript myCamera;
+    public uiScript myUiScript;
     private Command recCommand;
     private uint recPlayer;
     private float recX, recY, recZ;
@@ -55,6 +58,9 @@ public class gameScript : MonoBehaviour {
                 //Mir wird meine Nummer in der Spielerliste gesagt
                 myPosInList = recPlayerPosInList;
                 myPlayerId = uint.Parse(splitMessage[2]);
+                //TODO: Hier dann den playerPrefab instantiieren
+                Vector3 spawnPos = new Vector3(47,25,9);
+                GameObject newPlayer = (GameObject)Instantiate(playerPrefab, spawnPos, Quaternion.identity);
                 break;
             default:
                 break;
@@ -90,11 +96,23 @@ public class gameScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-	
-	}
+    }
 
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        //TODO: Das hier wird ausgefuehrt, wenn der Server eine Position liefert
+        if (Input.GetKeyDown("k"))
+        {
+            Vector3 spawnPos = new Vector3(47, 25, 9);
+            GameObject newPlayer = (GameObject)Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+            inputScript newPlayerScript = newPlayer.GetComponent<inputScript>();
+            //Dem Player alle Werte geben
+            newPlayerScript.myGame = this;
+            newPlayerScript.myNetwork = this.myNetwork;
+            newPlayerScript.myCameraScript = this.myCamera;
+            newPlayerScript.myUiScript = this.myUiScript;
+            //Der Kamera alle Werte geben
+            myCamera.myPlayer = newPlayer;
+        }
+    }
 }
