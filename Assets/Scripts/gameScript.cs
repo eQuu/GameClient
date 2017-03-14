@@ -59,8 +59,7 @@ public class gameScript : MonoBehaviour {
                 myPosInList = recPlayerPosInList;
                 myPlayerId = uint.Parse(splitMessage[2]);
                 //TODO: Hier dann den playerPrefab instantiieren
-                Vector3 spawnPos = new Vector3(47,25,9);
-                GameObject newPlayer = (GameObject)Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+                joinWorld();
                 break;
             default:
                 break;
@@ -94,6 +93,21 @@ public class gameScript : MonoBehaviour {
         playerList[recPlayerPosInList] = playerToAdd;
     }
 
+    private void joinWorld()
+    {
+        //Wir haben eine Nummer vom Server zugewiesen bekommen und betreten die Welt
+        Vector3 spawnPos = new Vector3(47, 25, 9);
+        GameObject newPlayer = (GameObject)Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+        inputScript newPlayerScript = newPlayer.GetComponent<inputScript>();
+        //Dem Player alle Werte geben
+        newPlayerScript.myGame = this;
+        newPlayerScript.myNetwork = this.myNetwork;
+        newPlayerScript.myCameraScript = this.myCamera;
+        newPlayerScript.myUiScript = this.myUiScript;
+        //Der Kamera alle Werte geben
+        myCamera.myPlayer = newPlayer;
+    }
+
     // Use this for initialization
     void Start () {
     }
@@ -103,16 +117,7 @@ public class gameScript : MonoBehaviour {
         //TODO: Das hier wird ausgefuehrt, wenn der Server eine Position liefert
         if (Input.GetKeyDown("k"))
         {
-            Vector3 spawnPos = new Vector3(47, 25, 9);
-            GameObject newPlayer = (GameObject)Instantiate(playerPrefab, spawnPos, Quaternion.identity);
-            inputScript newPlayerScript = newPlayer.GetComponent<inputScript>();
-            //Dem Player alle Werte geben
-            newPlayerScript.myGame = this;
-            newPlayerScript.myNetwork = this.myNetwork;
-            newPlayerScript.myCameraScript = this.myCamera;
-            newPlayerScript.myUiScript = this.myUiScript;
-            //Der Kamera alle Werte geben
-            myCamera.myPlayer = newPlayer;
+
         }
     }
 }

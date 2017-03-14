@@ -2,100 +2,680 @@ Initialize engine version: 5.4.1f1 (649f48bbbf0f)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: AMD Radeon HD 6500M/5600/5700 Series (ID=0x68c1)
-    Vendor:   ATI
-    VRAM:     1014 MB
+    Renderer: NVIDIA GeForce GTX 750 Ti (ID=0x1380)
+    Vendor:   NVIDIA
+    VRAM:     1993 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.115 seconds
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\System.dll (this message is harmless)
-desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
+Platform assembly: C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.040 seconds
+Platform assembly: C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.195767 ms
+UnloadTime: 0.659113 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 20d8 -> priority: 1 
-Initialize engine version: 5.4.1f1 (649f48bbbf0f)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: AMD Radeon HD 6500M/5600/5700 Series (ID=0x68c1)
-    Vendor:   ATI
-    VRAM:     1014 MB
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.095 seconds
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Daniel\Documents\GitHub\Bosses\Wind\mhmja\startAlpha_Data\Managed\System.dll (this message is harmless)
-desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
-<RI> Initializing input.
-<RI> Input initialized.
-<RI> Initialized touch support.
+  Thread -> id: 5dc -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 10.654596 ms
+UnloadTime: 4.124032 ms
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 311.
-Total: 0.338279 ms (FindLiveObjects: 0.036570 ms CreateObjectMapping: 0.016841 ms MarkObjects: 0.262250 ms  DeleteObjects: 0.021172 ms)
+Total: 0.237986 ms (FindLiveObjects: 0.018281 ms CreateObjectMapping: 0.008339 ms MarkObjects: 0.179291 ms  DeleteObjects: 0.031432 ms)
 
 Socket Open. SocketId is: 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-UnloadTime: 1.502287 ms
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2260 -> priority: 1 
-Connected to server. ConnectionId: 1
+sende Nachricht: 3;0;0;47.78666;16.49676;9.373459
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-incoming connection event received
+sende Nachricht: 3;0;0;47.78666;16.49676;9.489905
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-sende Nachricht: 1;
+sende Nachricht: 3;0;0;47.78666;16.49676;9.590139
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 9.289449 ms
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 311.
-Total: 0.339722 ms (FindLiveObjects: 0.037051 ms CreateObjectMapping: 0.017322 ms MarkObjects: 0.262731 ms  DeleteObjects: 0.021653 ms)
-
-Socket Open. SocketId is: 0
+sende Nachricht: 3;0;0;47.78666;16.49676;9.706614
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Connected to server. ConnectionId: 1
+sende Nachricht: 3;0;0;47.78666;16.49676;9.806636
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-incoming connection event received
+sende Nachricht: 3;0;0;47.78666;16.49676;9.906902
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-sende Nachricht: 1;
+sende Nachricht: 3;0;0;47.78893;16.49676;10.02332
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:777}
-remote client event disconnected
+sende Nachricht: 3;0;0;47.79738;16.49676;10.12334
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;47.80132;16.49676;10.22356
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;47.80589;16.49676;10.33998
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;47.81046;16.49676;10.4564
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;47.81439;16.49676;10.55646
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;47.81845;16.49676;10.67291
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;47.85198;16.49676;10.77333
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;47.96022;16.49676;10.89561
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.04217;16.49676;11.00952
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.11191;16.49676;11.13167
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.17618;16.49676;11.28145
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.22713;16.49676;11.43805
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.27749;16.49676;11.59505
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.32349;16.49676;11.72969
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.37618;16.49676;11.86189
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.4511;16.49676;12.00985
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.45553;16.49676;12.13148
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.42793;16.49676;12.24417
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.40411;16.49676;12.34142
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.38139;16.49676;12.4392
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.36281;16.49676;12.53779
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.35065;16.49676;12.65303
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.35101;16.49676;12.7533
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.36464;16.49676;12.86902
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.39227;16.49676;12.98217
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.43369;16.49676;13.09158
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.48769;16.49676;13.19488
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.54426;16.49676;13.2964
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.58914;16.49676;13.38585
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.63275;16.49676;13.49384
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.66371;16.49676;13.6064
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.69043;16.49676;13.71997
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.7171;16.49676;13.83333
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.74007;16.49676;13.93096
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.76681;16.49676;14.04461
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.79356;16.49676;14.15829
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.82018;16.49676;14.27145
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.84312;16.49676;14.36898
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.86604;16.49676;14.46636
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.89276;16.49676;14.57996
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.91943;16.49676;14.69329
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.94239;16.49676;14.7909
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.96531;16.49676;14.88832
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;48.99206;16.49676;15.002
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.01872;16.49676;15.11532
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.04165;16.49676;15.21278
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.06837;16.49676;15.32636
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.09496;16.49676;15.43932
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.11908;16.49676;15.53655
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.15258;16.49676;15.64862
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.19603;16.49676;15.75674
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.2434;16.49676;15.84491
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.30964;16.49676;15.94088
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.37933;16.49676;16.03419
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.42975;16.49676;16.10062
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.49529;16.49676;16.17623
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.57334;16.49676;16.2629
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.65147;16.49676;16.34967
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.72926;16.49676;16.43605
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.79631;16.49676;16.5105
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.86414;16.49676;16.58404
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;49.93501;16.49676;16.65469
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.02394;16.49676;16.72998
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.11781;16.49676;16.79944
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.19824;16.49676;16.85897
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.29184;16.49676;16.92823
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.37231;16.49676;16.98777
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.46579;16.49676;17.05696
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.55984;16.49676;17.12655
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.65318;16.49676;17.19562
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.74693;16.49676;17.26499
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.82742;16.49676;17.32456
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.84096;16.49676;17.33458
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;50.9347;16.49676;17.40394
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.01519;16.49676;17.46351
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.10881;16.49676;17.53279
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.18946;16.49676;17.59247
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.28307;16.49676;17.66175
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.36349;16.49676;17.72126
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.45721;16.49676;17.79061
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.53766;16.49676;17.85015
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.63131;16.49676;17.91945
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.71196;16.49676;17.97913
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.80537;16.49676;18.04861
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.88458;16.49676;18.11088
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;51.97119;16.49676;18.18849
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.04919;16.49676;18.27514
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.11576;16.49676;18.37024
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.16348;16.49676;18.45808
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.20209;16.49676;18.55052
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.24382;16.49676;18.65925
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.27972;16.49676;18.75278
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.32154;16.49676;18.86174
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.35762;16.49676;18.95577
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.44628;16.49676;19.04628
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.59679;16.49676;19.1133
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.74754;16.49676;19.18044
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;52.89766;16.49283;19.24728
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;53.02714;16.41435;19.30494
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;53.17774;16.19068;19.37201
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;53.3282;15.82574;19.43963
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;53.45512;15.4982;19.50121
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;53.59725;15.49676;19.58235
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;53.73011;15.49676;19.67886
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;53.85218;15.48499;19.78807
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;53.95864;15.38689;19.88181
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;54.0889;15.13968;19.9842
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;54.20908;14.7512;19.99252
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;54.33269;14.49705;20.03918
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;54.46681;14.49676;20.088
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;54.62538;14.49676;20.13367
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;54.78333;14.49676;20.17895
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;54.84649;14.49676;20.25887
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;54.9003;14.49676;20.36226
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;54.94715;14.49676;20.46931
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;54.98201;14.49676;20.58006
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.00323;14.49676;20.69461
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.07668;14.49676;20.78984
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.17318;14.49676;20.89156
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.25869;14.49676;21.00301
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.34281;14.49676;21.14307
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.41007;14.49676;21.29227
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.473;14.49676;21.44431
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.52718;14.49676;21.57519
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.58153;14.49676;21.7065
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.64447;14.49676;21.85855
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.69856;14.49676;21.98923
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.76147;14.49676;22.14121
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.8158;14.49676;22.27245
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.86993;14.49676;22.40323
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.9332;14.49676;22.55608
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;55.99621;14.49676;22.70828
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.05915;14.49676;22.86034
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.11337;14.49676;22.99131
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.1763;14.49676;23.14332
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.2394;14.49676;23.29575
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.29354;14.49676;23.42653
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.35685;14.49676;23.57947
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.41962;14.49676;23.73113
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.47372;14.49676;23.86185
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.52789;14.49676;23.99273
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.58201;14.49676;24.12349
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.55258;14.49676;24.23705
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.51425;14.49676;24.32953
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.47576;14.49676;24.42238
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.43133;14.49676;24.52959
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.39291;14.49676;24.62229
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.35458;14.49676;24.71478
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.31118;14.49676;24.82264
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.2778;14.49676;24.91728
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.24813;14.49676;25.02972
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.23182;14.49676;25.14543
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.22975;14.49676;25.26184
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sende Nachricht: 3;0;0;56.23926;14.49676;25.34333
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 

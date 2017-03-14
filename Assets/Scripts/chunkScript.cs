@@ -170,7 +170,7 @@ public class chunkScript : MonoBehaviour
         mesh.vertices = newVertices.ToArray();
         mesh.uv = newUV.ToArray();
         mesh.triangles = newTriangles.ToArray();
-        mesh.Optimize();
+        ;
         mesh.RecalculateNormals();
 
         col.sharedMesh = null;
