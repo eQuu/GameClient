@@ -3,7 +3,7 @@ using System.Collections;
 
 public class inputScript : MonoBehaviour {
 
-    public float movespeed;
+    public float movespeed = 1;
     public cameraScript myCameraScript;
     public networkScript myNetwork;
     public uiScript myUiScript;
@@ -22,10 +22,18 @@ public class inputScript : MonoBehaviour {
 
     private Rigidbody myBody;
 
+    public void setBody(Rigidbody newBody)
+    {
+        this.myBody = newBody;
+    }
+
+    public void setAnimator(Animator newAnimator)
+    {
+        this.myAnim = newAnimator;
+    }
+
     // Use this for initialization
     void Start () {
-        myBody = GetComponent<Rigidbody>();
-        myAnim = GetComponent<Animator>();
 	}
 
     private bool isGrounded()

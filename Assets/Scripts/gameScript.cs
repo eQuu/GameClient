@@ -89,27 +89,39 @@ public class gameScript : MonoBehaviour {
 
     private void addPlayerToList(uint recPlayerPosInList)
     {
-        playerScript playerToAdd = new playerScript(recPlayerPosInList);
-        playerList[recPlayerPosInList] = playerToAdd;
+        Vector3 spawnPos = new Vector3(47, 25, 9);
+        GameObject newPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+        playerScript newPlayerScript = newPlayer.GetComponent<playerScript>();
+        newPlayerScript.setListPos(recPlayerPosInList);
+        if (newPlayerScript == null)
+        {
+            Debug.Log(newPlayerScript.getListPos());
+        }
+        playerList[recPlayerPosInList] = newPlayerScript;
     }
 
     private void joinWorld()
     {
         //Wir haben eine Nummer vom Server zugewiesen bekommen und betreten die Welt
         Vector3 spawnPos = new Vector3(47, 25, 9);
-        GameObject newPlayer = (GameObject)Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+        GameObject newPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+        newPlayer.AddComponent<inputScript>();
         inputScript newPlayerScript = newPlayer.GetComponent<inputScript>();
         //Dem Player alle Werte geben
         newPlayerScript.myGame = this;
         newPlayerScript.myNetwork = this.myNetwork;
         newPlayerScript.myCameraScript = this.myCamera;
         newPlayerScript.myUiScript = this.myUiScript;
+        newPlayerScript.setBody(newPlayer.GetComponent<Rigidbody>());
+        newPlayerScript.setAnimator(newPlayer.GetComponent<Animator>());
         //Der Kamera alle Werte geben
         myCamera.myPlayer = newPlayer;
     }
 
     // Use this for initialization
     void Start () {
+        //TODO: Erstmal nur 10 player erlauben
+        playerList = new playerScript[10];
     }
 
 	// Update is called once per frame
