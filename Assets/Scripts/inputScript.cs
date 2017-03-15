@@ -49,6 +49,13 @@ public class inputScript : MonoBehaviour {
         playerInputJump= Input.GetAxis("Jump");
         hasMoved = false;
 
+        if (Input.GetKeyDown("k"))
+        {
+            Vector3 testRot = transform.position;
+            testRot.y = testRot.y + 1;
+            transform.Rotate(Vector3.up,testRot.y);
+        }
+
         if (Input.GetMouseButtonUp(0))
         {
             myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -87,7 +94,7 @@ public class inputScript : MonoBehaviour {
         {
             transform.Rotate(Vector3.up, playerInputHorizontal);
             myCameraScript.followRotation(playerInputHorizontal);
-            //TODO: Rotation an den Server geben
+            hasMoved = true;
         }
         if (playerInputVertical > 0)
         {
@@ -107,7 +114,7 @@ public class inputScript : MonoBehaviour {
         lastUpdateTime = lastUpdateTime + Time.deltaTime;
         if (hasMoved && lastUpdateTime > updateRate)
         {
-            myNetwork.sendMessage("3;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + myBody.transform.position.x + ";" + myBody.transform.position.y + ";" + myBody.transform.position.z);
+            myNetwork.sendMessage("3;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + myBody.transform.position.x + ";" + myBody.transform.position.y + ";" + myBody.transform.position.z + ";" + myBody.transform.rotation.y);
             lastUpdateTime = 0f;
         }
     }

@@ -9,7 +9,7 @@ public class gameScript : MonoBehaviour {
         Connect = 1,
         Chat = 2,
         Move = 3,
-        PositionInList = 4
+        PositionInList = 4,
     };
 
     //Network
@@ -22,9 +22,10 @@ public class gameScript : MonoBehaviour {
     public uiScript myUiScript;
     private Command recCommand;
     private uint recPlayer;
-    private float recX, recY, recZ;
+    private float recX, recY, recZ, recRot;
     private playerScript[] playerList;
     private Vector3 newPosition;
+    private Quaternion newRotation;
     private string outMessage;
     uint recPlayerPosInList;
 
@@ -51,7 +52,8 @@ public class gameScript : MonoBehaviour {
                 recX = float.Parse(splitMessage[2]);
                 recY = float.Parse(splitMessage[3]);
                 recZ = float.Parse(splitMessage[4]);
-                movePlayer(recPlayerPosInList, recX, recY, recZ);
+                recRot = float.Parse(splitMessage[5]);
+                movePlayer(recPlayerPosInList, recX, recY, recZ, recRot);
                 break;
             case Command.PositionInList:
                 //Mir wird meine Nummer in der Spielerliste gesagt
@@ -75,14 +77,16 @@ public class gameScript : MonoBehaviour {
         return this.myPlayerId;
     }
 
-    private void movePlayer(uint recPlayerPosInList, float recX, float recY, float recZ)
+    private void movePlayer(uint recPlayerPosInList, float recX, float recY, float recZ, float recRot)
     {
         newPosition = new Vector3(recX, recY, recZ);
         playerList[recPlayerPosInList].getCharacter().transform.position = newPosition;
+        playerList[recPlayerPosInList].getCharacter().transform.Rotate(Vector3.up, recRot);
     }
 
     private void removePlayerFromList(uint recPlayerPosInList)
     {
+        Destroy(playerList[recPlayerPosInList].gameObject);
         playerList[recPlayerPosInList] = null;
     }
 
@@ -125,10 +129,6 @@ public class gameScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        //TODO: Das hier wird ausgefuehrt, wenn der Server eine Position liefert
-        if (Input.GetKeyDown("k"))
-        {
 
-        }
     }
 }
