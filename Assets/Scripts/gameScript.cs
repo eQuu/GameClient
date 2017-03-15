@@ -51,7 +51,6 @@ public class gameScript : MonoBehaviour {
                 recX = float.Parse(splitMessage[2]);
                 recY = float.Parse(splitMessage[3]);
                 recZ = float.Parse(splitMessage[4]);
-                Debug.Log("player " + recPlayerPosInList + " moved: " + recX + " " + recY + " " + recZ);
                 movePlayer(recPlayerPosInList, recX, recY, recZ);
                 break;
             case Command.PositionInList:

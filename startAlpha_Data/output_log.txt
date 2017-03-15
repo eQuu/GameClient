@@ -17,7 +17,7 @@ Platform assembly: C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\Unity
 Loading C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.026 seconds
+- Completed reload, in  0.024 seconds
 Platform assembly: C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\2nd\Desktop\Wind\mhmja\startAlpha_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
@@ -25,14 +25,14 @@ desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.271079 ms
+UnloadTime: 1.284859 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2434 -> priority: 1 
+  Thread -> id: 358 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.886423 ms
+UnloadTime: 5.093893 ms
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 388.
-Total: 0.309510 ms (FindLiveObjects: 0.038167 ms CreateObjectMapping: 0.023093 ms MarkObjects: 0.215855 ms  DeleteObjects: 0.032073 ms)
+Total: 0.253058 ms (FindLiveObjects: 0.023734 ms CreateObjectMapping: 0.016357 ms MarkObjects: 0.191798 ms  DeleteObjects: 0.020847 ms)
 
 Socket Open. SocketId is: 0
  
@@ -54,79 +54,47 @@ incoming message event received: 4;0;200
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;46.9835;16.51553;9
+sende Nachricht: 3;200;0;46.98285;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;46.86652;16.51553;9
+sende Nachricht: 3;200;0;46.86625;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;46.75001;16.51553;9
+sende Nachricht: 3;200;0;46.76622;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;46.63359;16.51553;9
+sende Nachricht: 3;200;0;46.64958;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;46.53325;16.51553;9
+sende Nachricht: 3;200;0;46.54947;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;46.41693;16.51553;9
+sende Nachricht: 3;200;0;46.43298;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;46.31663;16.51553;9
+sende Nachricht: 3;200;0;46.31583;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;46.20011;16.51553;9
+sende Nachricht: 3;200;0;46.19943;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;46.08345;16.51553;9.000816
+sende Nachricht: 3;200;0;46.09937;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.96047;16.51553;8.890547
+sende Nachricht: 3;200;0;45.98329;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.89648;16.51553;8.796585
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-sende Nachricht: 3;200;0;45.87229;16.51553;8.699517
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-sende Nachricht: 3;200;0;45.83145;16.51553;8.590293
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-sende Nachricht: 3;200;0;45.78606;16.51553;8.501205
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-sende Nachricht: 3;200;0;45.72174;16.51553;8.404037
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-sende Nachricht: 3;200;0;45.64619;16.51553;8.315555
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-sende Nachricht: 3;200;0;45.57309;16.51553;8.247358
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-sende Nachricht: 3;200;0;45.47962;16.51553;8.177795
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-sende Nachricht: 3;200;0;45.39695;16.51553;8.120966
+sende Nachricht: 3;200;0;45.86646;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -134,391 +102,211 @@ incoming message event received: 1;1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.36217;16.51553;8.087468
+sende Nachricht: 3;200;0;45.76612;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.3167;16.51553;7.980356
+sende Nachricht: 3;200;0;45.64972;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.28827;16.51553;7.88436
+sende Nachricht: 3;200;0;45.54948;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.26576;16.51553;7.786825
+sende Nachricht: 3;200;0;45.44942;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.23954;16.51553;7.673221
+sende Nachricht: 3;200;0;45.33308;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.21704;16.51553;7.575732
+sende Nachricht: 3;200;0;45.23304;16.51553;9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.19083;16.51553;7.462183
+sende Nachricht: 3;200;0;45.21633;16.51553;8.982902
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.16834;16.51553;7.364726
+sende Nachricht: 3;200;0;45.21633;16.51553;8.866406
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.14581;16.51553;7.267066
+sende Nachricht: 3;200;0;45.21633;16.51553;8.749759
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.11963;16.51553;7.15338
+sende Nachricht: 3;200;0;45.21633;16.51553;8.649759
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.09571;16.51553;7.039336
+sende Nachricht: 3;200;0;45.21633;16.51553;8.550035
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.01657;16.51553;9
+sende Nachricht: 3;200;0;45.21633;16.51553;8.433617
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.01657 16.51553 9
+sende Nachricht: 3;200;0;45.21633;16.51553;8.333483
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.13254;16.51553;9
+sende Nachricht: 3;200;0;45.21633;16.51553;8.21666
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.13254 16.51553 9
+sende Nachricht: 3;200;0;45.21633;16.51553;8.099983
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.2485;16.51553;9
+sende Nachricht: 3;200;0;45.21633;16.51553;7.982461
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.2485 16.51553 9
+sende Nachricht: 3;200;0;45.21633;16.51553;7.866869
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.36448;16.51553;9
+sende Nachricht: 3;200;0;45.31634;16.51553;7.76686
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.36448 16.51553 9
+incoming message event received: 3;1;47;16.51553;8.781744
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.48045;16.51553;9
+incoming message event received: 3;1;47;16.51553;8.665775
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.48045 16.51553 9
+incoming message event received: 3;1;47;16.51553;8.54981
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.59642;16.51553;9
+incoming message event received: 3;1;46.93373;16.51553;8.516675
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.59642 16.51553 9
+incoming message event received: 3;1;46.81776;16.51553;8.516675
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.71239;16.51553;9
+incoming message event received: 3;1;46.7018;16.51553;8.516675
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.71239 16.51553 9
+incoming message event received: 3;1;46.58583;16.51553;8.516675
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.82836;16.51553;9
+incoming message event received: 3;1;46.46987;16.51553;8.516675
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.82836 16.51553 9
+incoming message event received: 3;1;46.3539;16.51553;8.516675
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.94433;16.51553;9
+sende Nachricht: 3;200;0;45.3331;16.51553;7.73333
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.94433 16.51553 9
+sende Nachricht: 3;200;0;45.3331;16.51553;7.616903
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;48.0603;16.51553;9
+sende Nachricht: 3;200;0;45.3331;16.51553;7.51665
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 48.0603 16.51553 9
+sende Nachricht: 3;200;0;45.3331;16.51553;7.399881
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;45.07904;16.51553;7.041604
+sende Nachricht: 3;200;0;45.3331;16.51553;7.299849
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;44.96344;16.51553;7.057325
+sende Nachricht: 3;200;0;45.3331;16.51553;7.183415
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;44.8643;16.51553;7.070808
+sende Nachricht: 3;200;0;45.3331;16.51553;7.066467
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;44.76514;16.51553;7.084294
+sende Nachricht: 3;200;0;45.3331;16.51553;6.95014
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;44.64988;16.51553;7.099971
+sende Nachricht: 3;200;0;45.3331;16.51553;6.849744
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;44.55061;16.51553;7.113473
+sende Nachricht: 3;200;0;45.3331;16.51553;6.748999
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;44.45147;16.51553;7.126956
+sende Nachricht: 3;200;0;45.3331;16.51553;6.633416
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;44.35223;16.51553;7.140453
+sende Nachricht: 3;200;0;45.34951;16.51553;6.583488
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;44.25313;16.51553;7.153932
+sende Nachricht: 3;200;0;45.46607;16.51553;6.583488
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-sende Nachricht: 3;200;0;44.13766;16.51553;7.169636
+sende Nachricht: 3;200;0;45.56619;16.51553;6.583488
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;48.14314;16.51553;9
+sende Nachricht: 3;200;0;45.68306;16.51553;6.583488
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 48.14314 16.51553 9
+sende Nachricht: 3;200;0;45.78318;16.51553;6.583488
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;48.02716;16.51553;9
+sende Nachricht: 3;200;0;45.89945;16.51553;6.583488
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 48.02716 16.51553 9
+sende Nachricht: 3;200;0;45.99956;16.51553;6.583488
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.91119;16.51553;9
+sende Nachricht: 3;200;0;45.99956;16.51553;6.566591
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.91119 16.51553 9
+sende Nachricht: 3;200;0;45.99956;16.51553;6.450194
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.79523;16.51553;9
+sende Nachricht: 3;200;0;45.99956;16.51553;6.350091
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.79523 16.51553 9
+sende Nachricht: 3;200;0;45.99956;16.51553;6.233438
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.67926;16.51553;9
+sende Nachricht: 3;200;0;45.99956;16.51553;6.133357
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-player 1 moved: 47.67926 16.51553 9
+sende Nachricht: 3;200;0;45.99956;16.51553;6.032794
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-incoming message event received: 3;1;47.56329;16.51553;9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 47.56329 16.51553 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;47.44732;16.51553;9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 47.44732 16.51553 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;47.33134;16.51553;9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 47.33134 16.51553 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;47.21537;16.51553;9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 47.21537 16.51553 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;47.09941;16.51553;9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 47.09941 16.51553 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.98344;16.51553;9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.98344 16.51553 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.86747;16.51553;9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.86747 16.51553 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.75151;16.51553;9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.75151 16.51553 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.63554;16.51553;9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.63554 16.51553 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.51957;16.51553;9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.51957 16.51553 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.40359;16.51553;8.983435
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.40359 16.51553 8.983435
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.28762;16.51553;8.867468
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.28762 16.51553 8.867468
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;8.751502
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 8.751502
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;8.635537
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 8.635537
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;8.519571
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 8.519571
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;8.403605
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 8.403605
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;8.287637
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 8.287637
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;8.171668
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 8.171668
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;8.055705
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 8.055705
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;7.939738
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 7.939738
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;7.823772
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 7.823772
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;7.707805
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 7.707805
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-incoming message event received: 3;1;46.27106;16.51553;7.591837
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-player 1 moved: 46.27106 16.51553 7.591837
+sende Nachricht: 3;200;0;45.99956;16.51553;5.916724
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
