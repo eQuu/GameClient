@@ -114,7 +114,7 @@ public class inputScript : MonoBehaviour {
         lastUpdateTime = lastUpdateTime + Time.deltaTime;
         if (hasMoved && lastUpdateTime > updateRate)
         {
-            myNetwork.sendMessage("3;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + myBody.transform.position.x + ";" + myBody.transform.position.y + ";" + myBody.transform.position.z + ";" + myBody.transform.rotation.y);
+            myNetwork.sendMessage("3;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + myBody.transform.position.x + ";" + myBody.transform.position.y + ";" + myBody.transform.position.z + ";" + myBody.transform.forward.x);
             lastUpdateTime = 0f;
         }
     }

@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class networkScript : MonoBehaviour {
     public gameScript myGame;
+    public string ipaddress;
 
     private int connectionId;
     private int channelId;
@@ -45,7 +46,11 @@ public class networkScript : MonoBehaviour {
     //Verbindet ueber den erstellten Socket zum Server
     private void connect()
     {
-        connectionId = NetworkTransport.Connect(socketId, "127.0.0.1", 777, 0, out error);
+        if (ipaddress == null)
+        {
+            ipaddress = "127.0.0.1";
+        }
+        connectionId = NetworkTransport.Connect(socketId, ipaddress, 777, 0, out error);
         Debug.Log("Connected to server. ConnectionId: " + connectionId);
     }
 
