@@ -3,12 +3,22 @@ using System.Collections;
 
 public class inputScript : MonoBehaviour {
 
+    enum Mousestate : byte
+    {
+        Normal = 0,
+        Aoespell = 1,
+        Itemuse = 2,
+        Spelluse = 3,
+    };
+
     public float movespeed = 1;
     public cameraScript myCameraScript;
     public networkScript myNetwork;
     public uiScript myUiScript;
     public gameScript myGame;
 
+    private GameObject castIndicator;
+    private Mousestate mouseState = 0;
     private float playerInputVertical;
     private float playerInputHorizontal;
     private float playerInputQundE;
@@ -21,6 +31,19 @@ public class inputScript : MonoBehaviour {
     private float lastUpdateTime = 0f;
 
     private Rigidbody myBody;
+
+    public void initiate(gameScript game, networkScript network, cameraScript camera, uiScript ui, Rigidbody body, Animator anim)
+    {
+        this.myGame = game;
+        this.myNetwork = network;
+        this.myCameraScript = camera;
+        this.myUiScript = ui;
+        this.myBody = body;
+        this.myAnim = anim;
+        this.castIndicator = myUiScript.castIndicator;
+        this.castIndicator = Instantiate(castIndicator, Camera.main.transform.position, Camera.main.transform.rotation);
+        this.castIndicator.SetActive(false);
+    }
 
     public void setBody(Rigidbody newBody)
     {
@@ -49,29 +72,62 @@ public class inputScript : MonoBehaviour {
         playerInputJump= Input.GetAxis("Jump");
         hasMoved = false;
 
-        if (Input.GetKeyDown("k"))
+        //Auf den mouseState reagieren
+        switch (mouseState)
         {
-            Vector3 testRot = transform.position;
-            testRot.y = testRot.y + 1;
-            transform.Rotate(Vector3.up,testRot.y);
+            case Mousestate.Normal:
+                //Der Spieler waehlt ein Target
+                if (Input.GetMouseButtonUp(0))
+                {
+                    myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(myRay, out clicked))
+                    {
+                        if (clicked.transform.tag.Contains("trgt"))
+                        {
+                            myUiScript.setTarget(clicked.transform);
+                        }
+                        else
+                        {
+                            myUiScript.setTarget(null);
+                        }
+                    }
+                    else
+                    {
+                        myUiScript.setTarget(null);
+                    }
+                }
+                break;
+            case Mousestate.Aoespell:
+                //Wo soll der Aoespell hin
+                myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(myRay, out clicked))
+                {
+                    Vector3 upwards = new Vector3(0, 1f, 0);
+                    castIndicator.transform.position = clicked.point + upwards;
+                    castIndicator.transform.rotation = Quaternion.AngleAxis(90.0f,Vector3.right);
+                }
+                if (Input.GetMouseButtonUp(0))
+                {
+                    castIndicator.SetActive(false);
+                    mouseState = Mousestate.Normal;
+                    //TODO: SpellId einbauen
+                    myNetwork.sendMessage("5;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + clicked.point.x + ";" + clicked.point.y + ";" + clicked.point.z);
+                }
+                break;
+            case Mousestate.Itemuse:
+                //Wo soll das Item benutzt werden
+                break;
+            case Mousestate.Spelluse:
+                //Wo soll der Spell benutzt werden
+                break;
+            default:
+                break;
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetKeyDown("k") && mouseState != Mousestate.Aoespell)
         {
-            myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(myRay, out clicked))
-            {
-                if (clicked.transform.tag.Contains("trgt"))
-                {
-                    myUiScript.setTarget(clicked.transform);
-                } else
-                {
-                    myUiScript.setTarget(null);
-                }
-            } else
-            {
-                myUiScript.setTarget(null);
-            }
+            mouseState = Mousestate.Aoespell;
+            castIndicator.SetActive(true);
         }
 
         if (Input.GetKeyDown("space") && isGrounded())
@@ -114,7 +170,7 @@ public class inputScript : MonoBehaviour {
         lastUpdateTime = lastUpdateTime + Time.deltaTime;
         if (hasMoved && lastUpdateTime > updateRate)
         {
-            myNetwork.sendMessage("3;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + myBody.transform.position.x + ";" + myBody.transform.position.y + ";" + myBody.transform.position.z + ";" + myBody.transform.forward.x);
+            myNetwork.sendMessage("3;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + myBody.transform.position.x + ";" + myBody.transform.position.y + ";" + myBody.transform.position.z + ";" + myBody.transform.rotation.w + ";" + myBody.transform.rotation.x + ";" + myBody.transform.rotation.y + ";" + myBody.transform.rotation.z);
             lastUpdateTime = 0f;
         }
     }

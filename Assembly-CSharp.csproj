@@ -57,6 +57,8 @@
      <Compile Include="Assets\Scripts\playerScript.cs" />
      <Compile Include="Assets\Scripts\uiScript.cs" />
      <Compile Include="Assets\Scripts\unitScript.cs" />
+     <None Include="Assets\Projectors\ProjectorLight.shader" />
+     <None Include="Assets\Projectors\ProjectorMultiply.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -10,6 +10,10 @@ public class gameScript : MonoBehaviour {
         Chat = 2,
         Move = 3,
         PositionInList = 4,
+        CastAOEStart = 5,
+        CastTargetStart = 6,
+        CastNoTargetStart = 7,
+        CastAOEEnd = 8
     };
 
     //Network
@@ -17,12 +21,14 @@ public class gameScript : MonoBehaviour {
     private uint myPosInList;
     private uint myPlayerId;
     //Game
+    public GameObject cubePrefab;
     public GameObject playerPrefab;
     public cameraScript myCamera;
     public uiScript myUiScript;
+    private float oldSnapshot, newSnapshot;
     private Command recCommand;
     private uint recPlayer;
-    private float recX, recY, recZ, recRot;
+    private float recX, recY, recZ, recRotW, recRotX, recRotY, recRotZ;
     private playerScript[] playerList;
     private Vector3 newPosition;
     private Quaternion newRotation;
@@ -52,8 +58,11 @@ public class gameScript : MonoBehaviour {
                 recX = float.Parse(splitMessage[2]);
                 recY = float.Parse(splitMessage[3]);
                 recZ = float.Parse(splitMessage[4]);
-                recRot = float.Parse(splitMessage[5]);
-                movePlayer(recPlayerPosInList, recX, recY, recZ, recRot);
+                recRotW = float.Parse(splitMessage[5]);
+                recRotX = float.Parse(splitMessage[6]);
+                recRotY = float.Parse(splitMessage[7]);
+                recRotZ = float.Parse(splitMessage[8]);
+                movePlayer(recPlayerPosInList, recX, recY, recZ, recRotW, recRotX, recRotY, recRotZ);
                 break;
             case Command.PositionInList:
                 //Mir wird meine Nummer in der Spielerliste gesagt
@@ -62,9 +71,24 @@ public class gameScript : MonoBehaviour {
                 //TODO: Hier dann den playerPrefab instantiieren
                 joinWorld();
                 break;
+            case Command.CastAOEEnd:
+                //Ein AOE-Spell wurde fertig gecastet
+                recX = float.Parse(splitMessage[2]);
+                recY = float.Parse(splitMessage[3]);
+                recZ = float.Parse(splitMessage[4]);
+                //TODO: Hier auf verschiedene Spell reagieren, wtf wie macht man das --> drueber nachdenken
+                castCubeSummon(recX, recY, recZ);
+                break;
             default:
                 break;
         }
+    }
+
+    private void castCubeSummon(float recX, float recY, float recZ)
+    {
+        Debug.Log("SPEEEEELLL");
+        Vector3 summonPos = new Vector3(recX, recY, recZ);
+        cubePrefab = Instantiate(cubePrefab, summonPos, Quaternion.AngleAxis(90f, Vector3.up));
     }
 
     public uint getMyPosInList()
@@ -77,11 +101,11 @@ public class gameScript : MonoBehaviour {
         return this.myPlayerId;
     }
 
-    private void movePlayer(uint recPlayerPosInList, float recX, float recY, float recZ, float recRot)
+    private void movePlayer(uint recPlayerPosInList, float recX, float recY, float recZ, float recRotW, float recRotX, float recRotY, float recRotZ)
     {
         newPosition = new Vector3(recX, recY, recZ);
-        playerList[recPlayerPosInList].getCharacter().transform.position = newPosition;
-        playerList[recPlayerPosInList].getCharacter().transform.Rotate(Vector3.up, recRot);
+        newRotation = new Quaternion(recRotX, recRotY, recRotZ, recRotW);
+        playerList[recPlayerPosInList].setNewPos(newPosition, newRotation);
     }
 
     private void removePlayerFromList(uint recPlayerPosInList)
@@ -110,13 +134,9 @@ public class gameScript : MonoBehaviour {
         GameObject newPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
         newPlayer.AddComponent<inputScript>();
         inputScript newPlayerScript = newPlayer.GetComponent<inputScript>();
-        //Dem Player alle Werte geben
-        newPlayerScript.myGame = this;
-        newPlayerScript.myNetwork = this.myNetwork;
-        newPlayerScript.myCameraScript = this.myCamera;
-        newPlayerScript.myUiScript = this.myUiScript;
-        newPlayerScript.setBody(newPlayer.GetComponent<Rigidbody>());
-        newPlayerScript.setAnimator(newPlayer.GetComponent<Animator>());
+        //Dem Inputscript alle Werte geben
+        newPlayerScript.initiate(this, this.myNetwork, this.myCamera, this.myUiScript, newPlayer.GetComponent<Rigidbody>(), newPlayer.GetComponent<Animator>());
+        newPlayer.GetComponent<playerScript>().setMainPlayer(true);
         //Der Kamera alle Werte geben
         myCamera.myPlayer = newPlayer;
     }

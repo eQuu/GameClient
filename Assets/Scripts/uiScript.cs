@@ -3,6 +3,8 @@ using System.Collections;
 
 public class uiScript : MonoBehaviour {
 
+    public GameObject castIndicator;
+
     private Transform myTarget;
     private Transform targetImage;
     private Transform selfImage;
