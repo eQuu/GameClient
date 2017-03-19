@@ -13,8 +13,8 @@ public class playerScript : MonoBehaviour {
     private Quaternion newRot;
     private Quaternion oldRot;
     private bool isMainPlayer = false;
-    private int currentMana;
-    private int maximumMana;
+    private int currentMana, currentHealth;
+    private int maximumMana, maximumHealth;
     private Animator myAnimator;
     //private float movespeed;
 
