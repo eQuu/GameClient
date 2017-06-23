@@ -13,7 +13,12 @@ public class gameScript : MonoBehaviour {
         CastAOEStart = 5,
         CastTargetStart = 6,
         CastNoTargetStart = 7,
-        CastAOEEnd = 8
+        CastAOEEnd = 8,
+        CastTargetEnd = 9,
+        CastNoTargetEnd = 10,
+        dealDamage = 11,
+        dealHeal = 12,
+        onlineCheck = 13
     };
 
     //Network
@@ -78,6 +83,13 @@ public class gameScript : MonoBehaviour {
                 recZ = float.Parse(splitMessage[4]);
                 //TODO: Hier auf verschiedene Spell reagieren, wtf wie macht man das --> drueber nachdenken
                 castCubeSummon(recX, recY, recZ);
+                //TODO: Hier wird erstmal fix 20 Mana abgezogen (hartcoded, das geht gar nicht, schaem dich programmierer!)
+                playerList[recPlayerPosInList].reduceCurrentMana(20);
+                //Wenn wir den Spell gecastet haben, dann setzen wir unseren spell auf CD, ist noch heftig work in progress, aber erstmal nur zum vorzeigen
+                if (recPlayerPosInList == myPosInList)
+                {
+                    myUiScript.setSpellCooldown();
+                }
                 break;
             default:
                 break;
@@ -133,10 +145,15 @@ public class gameScript : MonoBehaviour {
         Vector3 spawnPos = new Vector3(47, 25, 9);
         GameObject newPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
         newPlayer.AddComponent<inputScript>();
-        inputScript newPlayerScript = newPlayer.GetComponent<inputScript>();
+        inputScript newInputScript = newPlayer.GetComponent<inputScript>();
         //Dem Inputscript alle Werte geben
-        newPlayerScript.initiate(this, this.myNetwork, this.myCamera, this.myUiScript, newPlayer.GetComponent<Rigidbody>(), newPlayer.GetComponent<Animator>());
-        newPlayer.GetComponent<playerScript>().setMainPlayer(true);
+        newInputScript.initiate(this, this.myNetwork, this.myCamera, this.myUiScript, newPlayer.GetComponent<Rigidbody>(), newPlayer.GetComponent<Animator>());
+        playerScript myPlayerScript = newPlayer.GetComponent<playerScript>();
+        myPlayerScript.setMainPlayer(true);
+        //Uns selbst in die Liste der Spieler aufnehmen
+        playerList[myPosInList] = myPlayerScript;
+        //Dem HUD alle Werte geben
+        this.myUiScript.initiate(myPlayerScript);
         //Der Kamera alle Werte geben
         myCamera.myPlayer = newPlayer;
     }

@@ -11,12 +11,12 @@ public class inputScript : MonoBehaviour {
         Spelluse = 3,
     };
 
-    public float movespeed = 1;
     public cameraScript myCameraScript;
     public networkScript myNetwork;
     public uiScript myUiScript;
     public gameScript myGame;
 
+    private playerScript myPlayer;
     private GameObject castIndicator;
     private Mousestate mouseState = 0;
     private float playerInputVertical;
@@ -43,6 +43,7 @@ public class inputScript : MonoBehaviour {
         this.castIndicator = myUiScript.castIndicator;
         this.castIndicator = Instantiate(castIndicator, Camera.main.transform.position, Camera.main.transform.rotation);
         this.castIndicator.SetActive(false);
+        this.myPlayer = myBody.gameObject.GetComponent<playerScript>();
     }
 
     public void setBody(Rigidbody newBody)
@@ -84,7 +85,7 @@ public class inputScript : MonoBehaviour {
                     {
                         if (clicked.transform.tag.Contains("trgt"))
                         {
-                            myUiScript.setTarget(clicked.transform);
+                            myUiScript.setTarget(clicked.transform.gameObject.GetComponent<playerScript>());
                         }
                         else
                         {
@@ -124,7 +125,7 @@ public class inputScript : MonoBehaviour {
                 break;
         }
 
-        if (Input.GetKeyDown("k") && mouseState != Mousestate.Aoespell)
+        if (Input.GetKeyDown("1") && mouseState != Mousestate.Aoespell)
         {
             mouseState = Mousestate.Aoespell;
             castIndicator.SetActive(true);
@@ -138,11 +139,11 @@ public class inputScript : MonoBehaviour {
 
         if (playerInputQundE < 0)
         {
-            myBody.transform.position = myBody.transform.position + transform.right * movespeed * Time.deltaTime;
+            myBody.transform.position = myBody.transform.position + transform.right * this.myPlayer.getMovespeed() * Time.deltaTime;
             hasMoved = true;
         } else if (playerInputQundE > 0)
         {
-            myBody.transform.position = myBody.transform.position - transform.right * movespeed * Time.deltaTime;
+            myBody.transform.position = myBody.transform.position - transform.right * this.myPlayer.getMovespeed() * Time.deltaTime;
             hasMoved = true;
         }
 
@@ -154,19 +155,19 @@ public class inputScript : MonoBehaviour {
         }
         if (playerInputVertical > 0)
         {
-            myBody.transform.position = myBody.transform.position + transform.forward * movespeed * Time.deltaTime;
+            myBody.transform.position = myBody.transform.position + transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
             myAnim.SetBool("isWalking", true);
             hasMoved = true;
         } else if (playerInputVertical < 0)
         {
-            myBody.transform.position = myBody.transform.position - transform.forward * movespeed * Time.deltaTime;
+            myBody.transform.position = myBody.transform.position - transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
             myAnim.SetBool("isWalking", true);
             hasMoved = true;
         } else
         {
             myAnim.SetBool("isWalking", false);
         }
-
+        
         lastUpdateTime = lastUpdateTime + Time.deltaTime;
         if (hasMoved && lastUpdateTime > updateRate)
         {

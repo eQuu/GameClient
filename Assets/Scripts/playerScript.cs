@@ -16,7 +16,7 @@ public class playerScript : MonoBehaviour {
     private int currentMana, currentHealth;
     private int maximumMana, maximumHealth;
     private Animator myAnimator;
-    //private float movespeed;
+    private float movespeed = 2;
 
     public uint getListPos()
     {
@@ -39,6 +39,44 @@ public class playerScript : MonoBehaviour {
     public void setMainPlayer(bool newVal)
     {
         this.isMainPlayer = newVal;
+    }
+
+    public int getCurrentHealth()
+    {
+        return this.currentHealth;
+    }
+
+    public int getCurrentMana()
+    {
+        return this.currentMana;
+    }
+
+    public void reduceCurrentMana(int newVal)
+    {
+        if (newVal > this.currentMana)
+        {
+            this.currentMana = 0;
+        } else
+        {
+            this.currentMana = this.currentMana - newVal;
+        }
+    }
+
+    public void reduceCurrentHealth(int newVal)
+    {
+        if (newVal > this.currentHealth)
+        {
+            this.currentHealth = 0;
+        }
+        else
+        {
+            this.currentHealth = this.currentHealth - newVal;
+        }
+    }
+
+    public float getMovespeed()
+    {
+        return this.movespeed;
     }
 
     public GameObject getGameObject()
@@ -97,6 +135,8 @@ public class playerScript : MonoBehaviour {
         this.myAnimator = gameObject.GetComponent<Animator>();
         maximumMana = 100;
         currentMana = maximumMana;
+        maximumHealth = 100;
+        currentHealth = maximumHealth;
     }
 	
 	// Update is called once per frame
