@@ -10,15 +10,17 @@ public class gameScript : MonoBehaviour {
         Chat = 2,
         Move = 3,
         PositionInList = 4,
-        CastAOEStart = 5,
+        CastPointStart = 5,
         CastTargetStart = 6,
-        CastNoTargetStart = 7,
-        CastAOEEnd = 8,
+        CastFreeStart = 7,
+        CastPointEnd = 8,
         CastTargetEnd = 9,
-        CastNoTargetEnd = 10,
+        CastFreeEnd = 10,
         dealDamage = 11,
         dealHeal = 12,
-        onlineCheck = 13
+        onlineCheck = 13,
+        drainMana = 14,
+        giveMana = 15
     };
 
     //Network
@@ -76,7 +78,7 @@ public class gameScript : MonoBehaviour {
                 //TODO: Hier dann den playerPrefab instantiieren
                 joinWorld();
                 break;
-            case Command.CastAOEEnd:
+            case Command.CastPointEnd:
                 //Ein AOE-Spell wurde fertig gecastet
                 recX = float.Parse(splitMessage[2]);
                 recY = float.Parse(splitMessage[3]);

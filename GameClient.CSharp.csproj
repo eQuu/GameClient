@@ -82,6 +82,7 @@
     <Compile Include="Assets\Database\Spells\Spell.cs" />
     <Compile Include="Assets\Scripts\Noise.cs" />
     <Compile Include="Assets\Scripts\cameraScript.cs" />
+    <Compile Include="Assets\Scripts\chatScript.cs" />
     <Compile Include="Assets\Scripts\chunkScript.cs" />
     <Compile Include="Assets\Scripts\gameScript.cs" />
     <Compile Include="Assets\Scripts\inputScript.cs" />

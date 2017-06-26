@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class uiScript : MonoBehaviour {
 
@@ -16,6 +15,7 @@ public class uiScript : MonoBehaviour {
     private Transform targetHealth;
     private Transform targetMana;
     private spellBarScript mySpellBar;
+    private chatScript myChat;
 
     public void initiate(playerScript player)
     {
@@ -32,6 +32,7 @@ public class uiScript : MonoBehaviour {
         targetHealth = targetImage.transform.GetChild(0);
         targetMana = targetImage.transform.GetChild(1);
         mySpellBar = transform.GetChild(2).GetComponent<spellBarScript>();
+        myChat = transform.GetChild(3).GetComponent<chatScript>();
     }
 	
 	// Update is called once per frame
@@ -59,6 +60,21 @@ public class uiScript : MonoBehaviour {
             targetImage.gameObject.SetActive(false);
         }
 
+    }
+
+    public void focusChat(bool doFocus)
+    {
+        myChat.setFocused(doFocus);
+    }
+
+    public void checkFocus()
+    {
+        myChat.checkFocus();
+    }
+
+    public bool chatIsFocused()
+    {
+        return myChat.isFocused();
     }
 
     public void setSpellCooldown()

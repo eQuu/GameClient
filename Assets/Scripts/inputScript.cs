@@ -80,6 +80,8 @@ public class inputScript : MonoBehaviour {
                 //Der Spieler waehlt ein Target
                 if (Input.GetMouseButtonUp(0))
                 {
+                    //Input vom Chat wegnehmen
+                    myUiScript.checkFocus();
                     myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(myRay, out clicked))
                     {
@@ -125,49 +127,69 @@ public class inputScript : MonoBehaviour {
                 break;
         }
 
-        if (Input.GetKeyDown("1") && mouseState != Mousestate.Aoespell)
-        {
-            mouseState = Mousestate.Aoespell;
-            castIndicator.SetActive(true);
-        }
 
-        if (Input.GetKeyDown("space") && isGrounded())
-        {
-            myBody.AddForce(Vector3.up * 300);
-            hasMoved = true;
-        }
-
-        if (playerInputQundE < 0)
-        {
-            myBody.transform.position = myBody.transform.position + transform.right * this.myPlayer.getMovespeed() * Time.deltaTime;
-            hasMoved = true;
-        } else if (playerInputQundE > 0)
-        {
-            myBody.transform.position = myBody.transform.position - transform.right * this.myPlayer.getMovespeed() * Time.deltaTime;
-            hasMoved = true;
-        }
-
-        if (playerInputHorizontal != 0)
-        {
-            transform.Rotate(Vector3.up, playerInputHorizontal);
-            myCameraScript.followRotation(playerInputHorizontal);
-            hasMoved = true;
-        }
-        if (playerInputVertical > 0)
-        {
-            myBody.transform.position = myBody.transform.position + transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
-            myAnim.SetBool("isWalking", true);
-            hasMoved = true;
-        } else if (playerInputVertical < 0)
-        {
-            myBody.transform.position = myBody.transform.position - transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
-            myAnim.SetBool("isWalking", true);
-            hasMoved = true;
-        } else
+        //Keyboard
+        if (myUiScript.chatIsFocused())
         {
             myAnim.SetBool("isWalking", false);
+            if (Input.GetKeyDown("return"))
+            {
+                myUiScript.focusChat(false);
+            }
         }
-        
+        else
+        {
+            if (Input.GetKeyDown("return"))
+            {
+                myUiScript.focusChat(true);
+            }
+
+            if (Input.GetKeyDown("1") && mouseState != Mousestate.Aoespell)
+            {
+                mouseState = Mousestate.Aoespell;
+                castIndicator.SetActive(true);
+            }
+
+            if (Input.GetKeyDown("space") && isGrounded())
+            {
+                myBody.AddForce(Vector3.up * 300);
+                hasMoved = true;
+            }
+
+            if (playerInputQundE < 0)
+            {
+                myBody.transform.position = myBody.transform.position + transform.right * this.myPlayer.getMovespeed() * Time.deltaTime;
+                hasMoved = true;
+            }
+            else if (playerInputQundE > 0)
+            {
+                myBody.transform.position = myBody.transform.position - transform.right * this.myPlayer.getMovespeed() * Time.deltaTime;
+                hasMoved = true;
+            }
+
+            if (playerInputHorizontal != 0)
+            {
+                transform.Rotate(Vector3.up, playerInputHorizontal);
+                myCameraScript.followRotation(playerInputHorizontal);
+                hasMoved = true;
+            }
+            if (playerInputVertical > 0)
+            {
+                myBody.transform.position = myBody.transform.position + transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
+                myAnim.SetBool("isWalking", true);
+                hasMoved = true;
+            }
+            else if (playerInputVertical < 0)
+            {
+                myBody.transform.position = myBody.transform.position - transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
+                myAnim.SetBool("isWalking", true);
+                hasMoved = true;
+            }
+            else
+            {
+                myAnim.SetBool("isWalking", false);
+            }
+        }
         lastUpdateTime = lastUpdateTime + Time.deltaTime;
         if (hasMoved && lastUpdateTime > updateRate)
         {
