@@ -56,4 +56,9 @@ public class chatScript : MonoBehaviour {
             chatIsFocused = false;
         }
     }
+
+    internal void sanitizeInput()
+    {
+        
+    }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class uiScript : MonoBehaviour {
@@ -83,4 +84,8 @@ public class uiScript : MonoBehaviour {
         mySpellBar.setCooldown();
     }
 
+    internal void sanitizeInput()
+    {
+        myChat.sanitizeInput();
+    }
 }
