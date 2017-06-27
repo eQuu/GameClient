@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -89,8 +89,8 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 672
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -143,7 +143,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 998
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -378,13 +378,13 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Ale\Desktop\Game\GitHub\GameClient
+  m_LastProjectPath: C:\Users\Daniel\Documents\GitHub\Raidonia\GameClient
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 38}
-    m_SelectedIDs: c0240000
-    m_LastClickedID: 9408
-    m_ExpandedIDs: 00000000c024000010250000102600001228000014280000162800001828000000ca9a3bffffff7f
+    m_SelectedIDs: f4250000
+    m_LastClickedID: 9716
+    m_ExpandedIDs: 00000000f425000046260000462700004a2a00004c2a00004e2a0000502a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -412,7 +412,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c0240000102500001026000012280000142800001628000018280000
+    m_ExpandedIDs: 00000000f425000046260000462700004a2a00004c2a00004e2a0000502a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: e2210000ca210000301bffff2a2200008e220000ce210000d2210000d8250000c82400009ed7feffd0210000362200009a220000bc3400004437000092040000322400003e2400006224000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -528,9 +528,9 @@ MonoBehaviour:
     height: 651
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b22e0000
-    m_LastClickedID: 11954
-    m_ExpandedIDs: 2c5fffff6ed0ffff8ed8ffffd4e3ffff06e9ffff2ef3ffffe2f8ffffe6fbffff00000000142b0000
+    m_SelectedIDs: 4a010000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 20fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -610,9 +610,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.023664428, y: -0.9679705, z: 0.2291972, w: -0.09994554}
+    m_Target: {x: -0.108899035, y: -0.83589226, z: 0.17947607, w: -0.5072006}
     speed: 2
-    m_Value: {x: -0.02366387, y: -0.96794766, z: 0.2291918, w: -0.099943176}
+    m_Value: {x: -0.10889692, y: -0.83587605, z: 0.17947258, w: -0.50719076}
   m_Size:
     m_Target: 92.689705
     speed: 2
