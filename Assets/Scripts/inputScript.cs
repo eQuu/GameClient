@@ -134,8 +134,8 @@ public class inputScript : MonoBehaviour {
             myAnim.SetBool("isWalking", false);
             if (Input.GetKeyDown("return"))
             {
-                myUiScript.sanitizeInput();
-                myNetwork.sendMessage("2;");
+                string chatMsg = myUiScript.sanitizeInput();
+                myNetwork.sendMessage("2;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + chatMsg);
                 myUiScript.focusChat(false);
             }
         }

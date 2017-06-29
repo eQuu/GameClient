@@ -9,10 +9,12 @@ public class chatScript : MonoBehaviour {
 
     private bool chatIsFocused = false;
     private InputField myChatInput;
+    private Text myChatField;
 
     // Use this for initialization
     void Start () {
         myChatInput = transform.GetChild(0).GetComponent<InputField>();
+        myChatField = transform.GetChild(1).GetComponent<Text>();
     }
 	
     public void setFocused(bool doFocus)
@@ -57,8 +59,20 @@ public class chatScript : MonoBehaviour {
         }
     }
 
-    internal void sanitizeInput()
+    public string sanitizeInput()
     {
-        
+        string sanText = myChatInput.text.Replace(";","<_tr>");
+        return sanText;
+    }
+
+    private string sanitizeOutput(string recText)
+    {
+        string sanText = recText.Replace("<_tr>", ";");
+        return sanText;
+    }
+
+    public void showChatMessage(string message)
+    {
+        myChatField.text = myChatField.text + sanitizeOutput(message) + "\n";
     }
 }

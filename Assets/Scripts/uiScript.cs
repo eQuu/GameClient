@@ -84,8 +84,13 @@ public class uiScript : MonoBehaviour {
         mySpellBar.setCooldown();
     }
 
-    internal void sanitizeInput()
+    public string sanitizeInput()
     {
-        myChat.sanitizeInput();
+        return myChat.sanitizeInput();
+    }
+
+    public void showChatMessage(string recPlayer, string recText)
+    {
+        myChat.showChatMessage(recPlayer + ": "+ recText);
     }
 }

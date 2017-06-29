@@ -39,7 +39,6 @@ public class gameScript : MonoBehaviour {
     private playerScript[] playerList;
     private Vector3 newPosition;
     private Quaternion newRotation;
-    private string outMessage;
     uint recPlayerPosInList;
 
     public void processMessage(string[] splitMessage)
@@ -59,6 +58,7 @@ public class gameScript : MonoBehaviour {
                 break;
             case Command.Chat:
                 //Ein Spieler will eine Chatnachricht verschicken
+                myUiScript.showChatMessage(recPlayerPosInList.ToString(), splitMessage[2]);
                 break;
             case Command.Move:
                 //Ein Spieler hat sich bewegt
