@@ -23,21 +23,7 @@ public class cameraScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(1))
-        {
-            currentX = currentX + Input.GetAxis("Mouse X");
-            currentY = currentY + Input.GetAxis("Mouse Y");
 
-            currentY = Mathf.Clamp(currentY, minY, maxY);
-        }
-
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
-        {
-            distance = distance - Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
-        } else if (Input.GetAxis("Mouse ScrollWheel") > 0)
-        {
-            distance = distance - Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
-        }
     }
 
     // Update is called once per frame
@@ -52,9 +38,30 @@ public class cameraScript : MonoBehaviour {
         }
     }
 
-    public void followRotation(float playerInput)
+    public void zoomCamera()
     {
-        this.currentX = this.currentX + playerInput;
+        distance = distance - Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+    }
+
+    public void rotateCamera()
+    {
+        currentX = currentX + Input.GetAxis("Mouse X");
+        currentY = currentY + Input.GetAxis("Mouse Y");
+
+        clampHorizontal();
+    }
+
+    public void followRotation(float playerInputX, float playerInputY)
+    {
+        this.currentX = this.currentX + playerInputX;
+        this.currentY = this.currentY + playerInputY;
+
+        clampHorizontal();
+    }
+
+    private void clampHorizontal()
+    {
+        currentY = Mathf.Clamp(currentY, minY, maxY);
     }
 
 }

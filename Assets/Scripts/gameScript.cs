@@ -16,11 +16,12 @@ public class gameScript : MonoBehaviour {
         CastPointEnd = 8,
         CastTargetEnd = 9,
         CastFreeEnd = 10,
-        dealDamage = 11,
-        dealHeal = 12,
-        onlineCheck = 13,
-        drainMana = 14,
-        giveMana = 15
+        DealDamage = 11,
+        DealHeal = 12,
+        OnlineCheck = 13,
+        DrainMana = 14,
+        GiveMana = 15,
+        ChangeTarget = 16,
     };
 
     //Network
@@ -40,6 +41,7 @@ public class gameScript : MonoBehaviour {
     private Vector3 newPosition;
     private Quaternion newRotation;
     uint recPlayerPosInList;
+    private Spell[] spellList;
 
     public void processMessage(string[] splitMessage)
     {
@@ -93,6 +95,17 @@ public class gameScript : MonoBehaviour {
                     myUiScript.setSpellCooldown();
                 }
                 break;
+            case Command.ChangeTarget:
+                //Mir wird das target von jemanden gesagt
+                if (splitMessage[2] == "null")
+                {
+                    playerList[recPlayerPosInList].setTarget(null);
+                } else
+                {
+                    uint newTarget = uint.Parse(splitMessage[2]);
+                    playerList[recPlayerPosInList].setTarget(playerList[newTarget]);
+                }
+                break;
             default:
                 break;
         }
@@ -103,6 +116,26 @@ public class gameScript : MonoBehaviour {
         Debug.Log("SPEEEEELLL");
         Vector3 summonPos = new Vector3(recX, recY, recZ);
         cubePrefab = Instantiate(cubePrefab, summonPos, Quaternion.AngleAxis(90f, Vector3.up));
+    }
+
+    public int checkValidTarget()
+    {
+        if (myUiScript.getTarget() != null)
+        {
+            return 0;
+        }
+        return 1;
+    }
+
+    public void setTarget(uint playerInList, playerScript newTarget)
+    {
+        playerList[playerInList].setTarget(newTarget);
+        Debug.Log("hier komm ich an1: " + playerInList + "," + myPosInList);
+        if (playerInList == myPosInList)
+        {
+            Debug.Log("hier komm ich an2");
+            myUiScript.setTarget(newTarget);
+        }
     }
 
     public uint getMyPosInList()
@@ -165,6 +198,11 @@ public class gameScript : MonoBehaviour {
         Application.runInBackground = true;
         //TODO: Erstmal nur 10 player erlauben
         playerList = new playerScript[10];
+        spellList = new Spell[4];
+        spellList[0] = new Cube();
+        spellList[1] = new Fireblast();
+        spellList[2] = new Heal();
+        spellList[3] = new Innervate();
     }
 
 	// Update is called once per frame

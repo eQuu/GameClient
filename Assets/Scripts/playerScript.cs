@@ -16,7 +16,8 @@ public class playerScript : MonoBehaviour {
     private int currentMana, currentHealth;
     private int maximumMana, maximumHealth;
     private Animator myAnimator;
-    private float movespeed = 2;
+    private float movespeed = 4;
+    private playerScript target = null;
 
     public uint getListPos()
     {
@@ -29,6 +30,16 @@ public class playerScript : MonoBehaviour {
         this.newRot = newRot;
         this.isUpToDatePos = false;
         this.isUpToDateRot = false;
+    }
+
+    public void setTarget(playerScript newTarget)
+    {
+        this.target = newTarget;
+    }
+
+    public playerScript getTarget()
+    {
+        return this.target;
     }
 
     public void setListPos(uint newPos)

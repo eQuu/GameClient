@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,9 @@ public class uiScript : MonoBehaviour {
     private Transform targetMana;
     private spellBarScript mySpellBar;
     private chatScript myChat;
+    private Text errText;
+    private Stopwatch errWatch;
+    private int errDuration = 2000;
 
     public void initiate(playerScript player)
     {
@@ -34,6 +38,8 @@ public class uiScript : MonoBehaviour {
         targetMana = targetImage.transform.GetChild(1);
         mySpellBar = transform.GetChild(2).GetComponent<spellBarScript>();
         myChat = transform.GetChild(3).GetComponent<chatScript>();
+        errText = transform.GetChild(4).GetComponent<Text>();
+        errWatch = new Stopwatch();
     }
 	
 	// Update is called once per frame
@@ -48,6 +54,12 @@ public class uiScript : MonoBehaviour {
             targetHealth.GetComponent<Text>().text = myTarget.getCurrentHealth().ToString();
             targetMana.GetComponent<Text>().text = myTarget.getCurrentMana().ToString();
         }
+
+        //ErrText handlen
+        if (errWatch.ElapsedMilliseconds > errDuration)
+        {
+            fadeErrMessage();
+        }
     }
 
     public void setTarget(playerScript newTarget)
@@ -58,9 +70,14 @@ public class uiScript : MonoBehaviour {
             targetImage.gameObject.SetActive(true);
         } else
         {
+            this.myTarget = null;
             targetImage.gameObject.SetActive(false);
         }
+    }
 
+    public playerScript getTarget()
+    {
+        return this.myTarget;
     }
 
     public void focusChat(bool doFocus)
@@ -78,6 +95,44 @@ public class uiScript : MonoBehaviour {
         return myChat.isFocused();
     }
 
+    private void fadeErrMessage()
+    {
+        Color newColor = new Color(errText.material.color.r, errText.material.color.g, errText.material.color.b, errText.material.color.a - 0.01f);
+        if (newColor.a <= 0f)
+        {
+            errText.text = "";
+            newColor = new Color(errText.material.color.r, errText.material.color.g, errText.material.color.b, 1);
+            errWatch.Stop();
+            errWatch.Reset();
+        }
+        errText.material.color = newColor;
+    }
+
+    public void showErrMessage(string msg, int durationMS)
+    {
+        errDuration = durationMS;
+        errWatch.Reset();
+        errWatch.Start();
+        errText.text = msg;
+        Color newColor = new Color(errText.material.color.r, errText.material.color.g, errText.material.color.b, 1);
+        errText.material.color = newColor;
+    }
+
+    public void scrollChat(int direction)
+    {
+        myChat.scrollChat(direction);
+    }
+
+    public void setMouseOverChat(bool newVal)
+    {
+        myChat.setMouseOver(newVal);
+    }
+
+    public bool getMouseOverChat()
+    {
+        return myChat.getMouseOver();
+    }
+
     public void setSpellCooldown()
     {
         //TODO: Erstmal zum Testen nur den ersten Spell auf CD setzen
@@ -91,6 +146,6 @@ public class uiScript : MonoBehaviour {
 
     public void showChatMessage(string recPlayer, string recText)
     {
-        myChat.showChatMessage(recPlayer + ": "+ recText);
+        myChat.addChatMessage(recPlayer + ": "+ recText);
     }
 }

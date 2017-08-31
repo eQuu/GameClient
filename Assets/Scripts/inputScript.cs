@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Diagnostics;
 
 public class inputScript : MonoBehaviour {
 
@@ -27,8 +28,11 @@ public class inputScript : MonoBehaviour {
     private Ray myRay;
     private Animator myAnim;
     private bool hasMoved = false;
+    private bool isMouseMoving = false;
+    private bool camWasMoved = false;
     private float updateRate = 0.1f;
     private float lastUpdateTime = 0f;
+    private Stopwatch mouseTimer;
 
     private Rigidbody myBody;
 
@@ -58,11 +62,40 @@ public class inputScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        mouseTimer = new Stopwatch();
 	}
 
     private bool isGrounded()
     {
         return Physics.Raycast(transform.position, -Vector3.up, 0.1f);
+    }
+
+    private bool mouseRotationCheck()
+    {
+        if (mouseTimer.ElapsedMilliseconds < 1000 && camWasMoved == false)
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
+    }
+
+    private void setOwnTarget(playerScript newTarget)
+    {
+        if (myUiScript.getTarget() != newTarget)
+        {
+            UnityEngine.Debug.Log("neues Target");
+            myGame.setTarget(myPlayer.getListPos(), newTarget);
+            if (newTarget == null)
+            {
+                myNetwork.sendMessage("16;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + "null");
+            }
+            else
+            {
+                myNetwork.sendMessage("16;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + newTarget.getListPos());
+            }
+        }
     }
 
     void Update()
@@ -73,30 +106,90 @@ public class inputScript : MonoBehaviour {
         playerInputJump= Input.GetAxis("Jump");
         hasMoved = false;
 
+        //Input evtl. vom Chat wegnehmen
+        myUiScript.checkFocus();
+
+        //Mouse
+        //Wenn gescrollt wird...
+        if (Input.GetAxis("Mouse ScrollWheel") != 0f)
+        {
+            //...checken ob die Maus ueberm Chat liegt...
+            if (myUiScript.getMouseOverChat())
+            {
+                if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+                {
+                    myUiScript.scrollChat(-1);
+                }
+                else
+                {
+                    myUiScript.scrollChat(1);
+                }
+            }
+            //...ansonsten zoomen
+            else
+            {
+                myCameraScript.zoomCamera();
+            }
+        }
+
+        //Maustimer anwerfen, falls die linke Maustaste gehalten wird
+        if (Input.GetMouseButtonDown(0))
+        {
+            mouseTimer.Reset();
+            mouseTimer.Start();
+            camWasMoved = false;
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            mouseTimer.Stop();
+            isMouseMoving = false;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            if ((Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0) && camWasMoved == false && mouseTimer.ElapsedMilliseconds < 20)
+            {
+                camWasMoved = true;
+            }
+            myCameraScript.rotateCamera();
+        }
+
+        //Rechte Maustaste gehalten
+        if (Input.GetMouseButton(1))
+        {
+            transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+            myCameraScript.followRotation(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            //Und linke Maustaste gehalten
+            if (Input.GetMouseButton(0)) {
+                myBody.transform.position = myBody.transform.position + transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
+                myAnim.SetBool("isWalking", true);
+                hasMoved = true;
+                isMouseMoving = true;
+            }
+        }
+
         //Auf den mouseState reagieren
         switch (mouseState)
         {
             case Mousestate.Normal:
                 //Der Spieler waehlt ein Target
-                if (Input.GetMouseButtonUp(0))
+                if (Input.GetMouseButtonUp(0) && mouseRotationCheck() == false)
                 {
-                    //Input vom Chat wegnehmen
-                    myUiScript.checkFocus();
                     myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(myRay, out clicked))
                     {
                         if (clicked.transform.tag.Contains("trgt"))
                         {
-                            myUiScript.setTarget(clicked.transform.gameObject.GetComponent<playerScript>());
+                            setOwnTarget(clicked.transform.gameObject.GetComponent<playerScript>());
                         }
                         else
                         {
-                            myUiScript.setTarget(null);
+                            setOwnTarget(null);
                         }
                     }
                     else
                     {
-                        myUiScript.setTarget(null);
+                        setOwnTarget(null);
                     }
                 }
                 break;
@@ -107,9 +200,9 @@ public class inputScript : MonoBehaviour {
                 {
                     Vector3 upwards = new Vector3(0, 1f, 0);
                     castIndicator.transform.position = clicked.point + upwards;
-                    castIndicator.transform.rotation = Quaternion.AngleAxis(90.0f,Vector3.right);
+                    castIndicator.transform.rotation = Quaternion.AngleAxis(90.0f, Vector3.right);
                 }
-                if (Input.GetMouseButtonUp(0))
+                if (Input.GetMouseButtonUp(0) && mouseRotationCheck() == false)
                 {
                     castIndicator.SetActive(false);
                     mouseState = Mousestate.Normal;
@@ -127,7 +220,6 @@ public class inputScript : MonoBehaviour {
                 break;
         }
 
-
         //Keyboard
         if (myUiScript.chatIsFocused())
         {
@@ -135,7 +227,14 @@ public class inputScript : MonoBehaviour {
             if (Input.GetKeyDown("return"))
             {
                 string chatMsg = myUiScript.sanitizeInput();
-                myNetwork.sendMessage("2;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + chatMsg);
+                if (chatMsg != "")
+                {
+                    myNetwork.sendMessage("2;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + chatMsg);
+                }
+                myUiScript.focusChat(false);
+            }
+            if (Input.GetKeyDown("escape"))
+            {
                 myUiScript.focusChat(false);
             }
         }
@@ -144,12 +243,6 @@ public class inputScript : MonoBehaviour {
             if (Input.GetKeyDown("return"))
             {
                 myUiScript.focusChat(true);
-            }
-
-            if (Input.GetKeyDown("1") && mouseState != Mousestate.Aoespell)
-            {
-                mouseState = Mousestate.Aoespell;
-                castIndicator.SetActive(true);
             }
 
             if (Input.GetKeyDown("space") && isGrounded())
@@ -169,28 +262,59 @@ public class inputScript : MonoBehaviour {
                 hasMoved = true;
             }
 
-            if (playerInputHorizontal != 0)
+            if (!isMouseMoving)
             {
-                transform.Rotate(Vector3.up, playerInputHorizontal);
-                myCameraScript.followRotation(playerInputHorizontal);
-                hasMoved = true;
+                if (playerInputHorizontal != 0)
+                {
+                    transform.Rotate(Vector3.up, playerInputHorizontal);
+                    myCameraScript.followRotation(playerInputHorizontal, 0);
+                    hasMoved = true;
+                }
+                if (playerInputVertical > 0)
+                {
+                    myBody.transform.position = myBody.transform.position + transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
+                    myAnim.SetBool("isWalking", true);
+                    hasMoved = true;
+                }
+                else if (playerInputVertical < 0)
+                {
+                    myBody.transform.position = myBody.transform.position - transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
+                    myAnim.SetBool("isWalking", true);
+                    hasMoved = true;
+                }
+                else if (isMouseMoving == false)
+                {
+                    myAnim.SetBool("isWalking", false);
+                }
             }
-            if (playerInputVertical > 0)
+            if (Input.GetKeyDown("f"))
             {
-                myBody.transform.position = myBody.transform.position + transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
-                myAnim.SetBool("isWalking", true);
-                hasMoved = true;
+                if (myUiScript.getTarget() != null)
+                {
+                    myUiScript.setTarget(myUiScript.getTarget().getTarget());
+                }
             }
-            else if (playerInputVertical < 0)
+
+            //Spellbar
+            if (Input.GetKeyDown("1") && mouseState != Mousestate.Aoespell)
             {
-                myBody.transform.position = myBody.transform.position - transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
-                myAnim.SetBool("isWalking", true);
-                hasMoved = true;
+                mouseState = Mousestate.Aoespell;
+                castIndicator.SetActive(true);
             }
-            else
+            if (Input.GetKeyDown("2") && mouseState != Mousestate.Aoespell)
             {
-                myAnim.SetBool("isWalking", false);
+                int errCode = myGame.checkValidTarget();
+                //TODO: Clientside Ressourcen checken
+                //int errCode = myGame.
+                if (errCode == 1)
+                {
+                    myUiScript.showErrMessage("No target!", 1000);
+                } else
+                {
+                    //TODO: myNetwork.sendMessage("9;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";");
+                }
             }
+
         }
         lastUpdateTime = lastUpdateTime + Time.deltaTime;
         if (hasMoved && lastUpdateTime > updateRate)

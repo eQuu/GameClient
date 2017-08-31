@@ -8,14 +8,24 @@ using UnityEngine.UI;
 public class chatScript : MonoBehaviour {
 
     private bool chatIsFocused = false;
+    private bool mouseOver = false;
     private InputField myChatInput;
-    private Text myChatField;
+    private Text myChatText;
+    private String[] chatLines;
+    private const int maxChatLines = 20; //Niemals kleiner als 10 setzen!
+    private int currentChatLine = 0;
 
     // Use this for initialization
     void Start () {
         myChatInput = transform.GetChild(0).GetComponent<InputField>();
-        myChatField = transform.GetChild(1).GetComponent<Text>();
-    }
+        myChatText = transform.GetChild(1).GetComponent<Text>();
+        chatLines = new String[maxChatLines];
+
+        for (int i = 0; i < maxChatLines; i++)
+        {
+            chatLines[i] = "";
+        }
+}
 	
     public void setFocused(bool doFocus)
     {
@@ -45,9 +55,45 @@ public class chatScript : MonoBehaviour {
         }
     }
 
+    public void setMouseOver(bool doMouseOver)
+    {
+        this.mouseOver = doMouseOver;
+    }
+
+    public bool getMouseOver()
+    {
+        return this.mouseOver;
+    }
+
+    public void scrollChat(int direction)
+    {
+        if (direction < 0)
+        {
+            if (currentChatLine == 0)
+            {
+                //Do nothing
+            }else if (chatLines[currentChatLine - 1] == "")
+            {
+               //Do nothing
+            } else
+            {
+                this.currentChatLine = currentChatLine + direction;
+                showChatMessage();
+            }
+        } else
+        {
+            this.currentChatLine = currentChatLine + direction;
+            if (currentChatLine + 9 > maxChatLines)
+            {
+                currentChatLine = maxChatLines - 9;
+            }
+            showChatMessage();
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     internal void checkFocus()
@@ -71,8 +117,37 @@ public class chatScript : MonoBehaviour {
         return sanText;
     }
 
-    public void showChatMessage(string message)
+    public void addChatMessage(string message)
     {
-        myChatField.text = myChatField.text + sanitizeOutput(message) + "\n";
+        for (int i = 0; i < maxChatLines; i++)
+        {
+            if (i == maxChatLines - 1)
+            {
+                chatLines[i] = sanitizeOutput(message);
+            } else
+            {
+                chatLines[i] = chatLines[i + 1];
+            }
+        }
+        currentChatLine = maxChatLines - 9;
+        showChatMessage();
+    }
+
+    private void showChatMessage()
+    {
+        int lineCount = 0;
+        myChatText.text = "";
+        for (int i = currentChatLine; lineCount < 9; i++)
+        {
+
+            if (lineCount == 8)
+            {
+                myChatText.text = myChatText.text + chatLines[i];
+            } else
+            {
+                myChatText.text = myChatText.text + chatLines[i] + "\n";
+            }
+            lineCount = lineCount + 1;
+        }
     }
 }
