@@ -13,6 +13,7 @@ public class cameraScript : MonoBehaviour {
     private float sensivityX = 4.0f;
     private float sensivityY = 1.0f;
     private Vector3 direction;
+    private Vector3 headPos;
 
     private Quaternion rotation;
 
@@ -31,16 +32,21 @@ public class cameraScript : MonoBehaviour {
 
         if (myPlayer != null)
         {
-            direction = new Vector3(0, 0, distance);
+            direction = new Vector3(0, 1.75f, distance);
             rotation = Quaternion.Euler(currentY, currentX, 0);
             transform.position = myPlayer.transform.position + rotation * direction;
-            transform.LookAt(myPlayer.transform.position);
+            headPos = new Vector3(myPlayer.transform.position.x, myPlayer.transform.position.y + 1.75f, myPlayer.transform.position.z);
+            transform.LookAt(headPos);
         }
     }
 
     public void zoomCamera()
     {
         distance = distance - Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+        if (distance < 1)
+        {
+            distance = 1;
+        }
     }
 
     public void rotateCamera()

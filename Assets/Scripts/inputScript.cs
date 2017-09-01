@@ -7,9 +7,9 @@ public class inputScript : MonoBehaviour {
     enum Mousestate : byte
     {
         Normal = 0,
-        Aoespell = 1,
+        Pointspell = 1,
         Itemuse = 2,
-        Spelluse = 3,
+        TargetSpell = 3,
     };
 
     public cameraScript myCameraScript;
@@ -17,7 +17,6 @@ public class inputScript : MonoBehaviour {
     public uiScript myUiScript;
     public gameScript myGame;
 
-    private playerScript myPlayer;
     private GameObject castIndicator;
     private Mousestate mouseState = 0;
     private float playerInputVertical;
@@ -33,6 +32,7 @@ public class inputScript : MonoBehaviour {
     private float updateRate = 0.1f;
     private float lastUpdateTime = 0f;
     private Stopwatch mouseTimer;
+    private uint nextSpellId;
 
     private Rigidbody myBody;
 
@@ -47,7 +47,6 @@ public class inputScript : MonoBehaviour {
         this.castIndicator = myUiScript.castIndicator;
         this.castIndicator = Instantiate(castIndicator, Camera.main.transform.position, Camera.main.transform.rotation);
         this.castIndicator.SetActive(false);
-        this.myPlayer = myBody.gameObject.GetComponent<playerScript>();
     }
 
     public void setBody(Rigidbody newBody)
@@ -83,10 +82,11 @@ public class inputScript : MonoBehaviour {
 
     private void setOwnTarget(playerScript newTarget)
     {
+        UnityEngine.Debug.Log("myposinlist: " + myGame.getMyPosInList() + ", myownplayerposinlist: " + myGame.getOwnPlayer().getListPos());
         if (myUiScript.getTarget() != newTarget)
         {
             UnityEngine.Debug.Log("neues Target");
-            myGame.setTarget(myPlayer.getListPos(), newTarget);
+            myGame.setTarget(myGame.getMyPosInList(), newTarget);
             if (newTarget == null)
             {
                 myNetwork.sendMessage("16;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + "null");
@@ -161,7 +161,7 @@ public class inputScript : MonoBehaviour {
             myCameraScript.followRotation(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
             //Und linke Maustaste gehalten
             if (Input.GetMouseButton(0)) {
-                myBody.transform.position = myBody.transform.position + transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
+                myBody.transform.position = myBody.transform.position + transform.forward * myGame.getOwnPlayer().getMovespeed() * Time.deltaTime;
                 myAnim.SetBool("isWalking", true);
                 hasMoved = true;
                 isMouseMoving = true;
@@ -193,7 +193,7 @@ public class inputScript : MonoBehaviour {
                     }
                 }
                 break;
-            case Mousestate.Aoespell:
+            case Mousestate.Pointspell:
                 //Wo soll der Aoespell hin
                 myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(myRay, out clicked))
@@ -206,14 +206,13 @@ public class inputScript : MonoBehaviour {
                 {
                     castIndicator.SetActive(false);
                     mouseState = Mousestate.Normal;
-                    //TODO: SpellId einbauen
-                    myNetwork.sendMessage("5;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";" + clicked.point.x + ";" + clicked.point.y + ";" + clicked.point.z);
+                    myGame.tryPointSpellCast(nextSpellId, clicked.point);
                 }
                 break;
             case Mousestate.Itemuse:
                 //Wo soll das Item benutzt werden
                 break;
-            case Mousestate.Spelluse:
+            case Mousestate.TargetSpell:
                 //Wo soll der Spell benutzt werden
                 break;
             default:
@@ -253,12 +252,12 @@ public class inputScript : MonoBehaviour {
 
             if (playerInputQundE < 0)
             {
-                myBody.transform.position = myBody.transform.position + transform.right * this.myPlayer.getMovespeed() * Time.deltaTime;
+                myBody.transform.position = myBody.transform.position + transform.right * myGame.getOwnPlayer().getMovespeed() * Time.deltaTime;
                 hasMoved = true;
             }
             else if (playerInputQundE > 0)
             {
-                myBody.transform.position = myBody.transform.position - transform.right * this.myPlayer.getMovespeed() * Time.deltaTime;
+                myBody.transform.position = myBody.transform.position - transform.right * myGame.getOwnPlayer().getMovespeed() * Time.deltaTime;
                 hasMoved = true;
             }
 
@@ -272,13 +271,13 @@ public class inputScript : MonoBehaviour {
                 }
                 if (playerInputVertical > 0)
                 {
-                    myBody.transform.position = myBody.transform.position + transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
+                    myBody.transform.position = myBody.transform.position + transform.forward * myGame.getOwnPlayer().getMovespeed() * Time.deltaTime;
                     myAnim.SetBool("isWalking", true);
                     hasMoved = true;
                 }
                 else if (playerInputVertical < 0)
                 {
-                    myBody.transform.position = myBody.transform.position - transform.forward * this.myPlayer.getMovespeed() * Time.deltaTime;
+                    myBody.transform.position = myBody.transform.position - transform.forward * myGame.getOwnPlayer().getMovespeed() * Time.deltaTime;
                     myAnim.SetBool("isWalking", true);
                     hasMoved = true;
                 }
@@ -291,28 +290,35 @@ public class inputScript : MonoBehaviour {
             {
                 if (myUiScript.getTarget() != null)
                 {
-                    myUiScript.setTarget(myUiScript.getTarget().getTarget());
+                    playerScript newTarget = myUiScript.getTarget().getTarget();
+                    if ( newTarget != null)
+                    {
+                        myGame.setTarget(newTarget);
+                    }
                 }
             }
 
             //Spellbar
-            if (Input.GetKeyDown("1") && mouseState != Mousestate.Aoespell)
+            if (Input.GetKeyDown("1") && mouseState != Mousestate.Pointspell)
             {
-                mouseState = Mousestate.Aoespell;
+                nextSpellId = 0;
+                mouseState = Mousestate.Pointspell;
                 castIndicator.SetActive(true);
             }
-            if (Input.GetKeyDown("2") && mouseState != Mousestate.Aoespell)
+            if (Input.GetKeyDown("2") && mouseState != Mousestate.Pointspell)
             {
-                int errCode = myGame.checkValidTarget();
-                //TODO: Clientside Ressourcen checken
-                //int errCode = myGame.
-                if (errCode == 1)
-                {
-                    myUiScript.showErrMessage("No target!", 1000);
-                } else
-                {
-                    //TODO: myNetwork.sendMessage("9;" + myGame.getMyPlayerId() + ";" + myGame.getMyPosInList() + ";");
-                }
+                nextSpellId = 1;
+                myGame.tryTargetSpellCast(nextSpellId);
+            }
+            if (Input.GetKeyDown("3") && mouseState != Mousestate.Pointspell)
+            {
+                nextSpellId = 2;
+                myGame.tryTargetSpellCast(nextSpellId);
+            }
+            if (Input.GetKeyDown("4") && mouseState != Mousestate.Pointspell)
+            {
+                nextSpellId = 3;
+                myGame.tryTargetSpellCast(nextSpellId);
             }
 
         }

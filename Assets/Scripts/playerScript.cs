@@ -17,6 +17,7 @@ public class playerScript : MonoBehaviour {
     private int maximumMana, maximumHealth;
     private Animator myAnimator;
     private float movespeed = 4;
+    private Spell[] spellList;
     private playerScript target = null;
 
     public uint getListPos()
@@ -85,6 +86,30 @@ public class playerScript : MonoBehaviour {
         }
     }
 
+    public void increaseCurrentHealth(int newVal)
+    {
+        if (newVal + currentHealth > this.maximumHealth)
+        {
+            this.currentHealth = this.maximumHealth;
+        }
+        else
+        {
+            this.currentHealth = this.currentHealth + newVal;
+        }
+    }
+
+    public void increaseCurrentMana(int newVal)
+    {
+        if (newVal + currentMana > this.maximumMana)
+        {
+            this.currentMana = this.maximumMana;
+        }
+        else
+        {
+            this.currentMana = this.currentMana + newVal;
+        }
+    }
+
     public float getMovespeed()
     {
         return this.movespeed;
@@ -148,7 +173,7 @@ public class playerScript : MonoBehaviour {
         currentMana = maximumMana;
         maximumHealth = 100;
         currentHealth = maximumHealth;
-    }
+}
 	
 	// Update is called once per frame
 	void Update () {

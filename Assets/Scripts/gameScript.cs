@@ -36,6 +36,8 @@ public class gameScript : MonoBehaviour {
     private float oldSnapshot, newSnapshot;
     private Command recCommand;
     private uint recPlayer;
+    private uint recTargetPosInList;
+    private uint recSpellPosInList;
     private float recX, recY, recZ, recRotW, recRotX, recRotY, recRotZ;
     private playerScript[] playerList;
     private Vector3 newPosition;
@@ -85,15 +87,23 @@ public class gameScript : MonoBehaviour {
                 recX = float.Parse(splitMessage[2]);
                 recY = float.Parse(splitMessage[3]);
                 recZ = float.Parse(splitMessage[4]);
+                recSpellPosInList = uint.Parse(splitMessage[5]);
                 //TODO: Hier auf verschiedene Spell reagieren, wtf wie macht man das --> drueber nachdenken
                 castCubeSummon(recX, recY, recZ);
-                //TODO: Hier wird erstmal fix 20 Mana abgezogen (hartcoded, das geht gar nicht, schaem dich programmierer!)
-                playerList[recPlayerPosInList].reduceCurrentMana(20);
+                //TODO: Hier wird Mana abgezogen (hartcoded, das geht gar nicht, schaem dich programmierer!)
+                playerList[recPlayerPosInList].reduceCurrentMana(spellList[recSpellPosInList].spellManacost);
                 //Wenn wir den Spell gecastet haben, dann setzen wir unseren spell auf CD, ist noch heftig work in progress, aber erstmal nur zum vorzeigen
                 if (recPlayerPosInList == myPosInList)
                 {
                     myUiScript.setSpellCooldown();
                 }
+                break;
+            case Command.CastTargetEnd:
+                recTargetPosInList = uint.Parse(splitMessage[2]);
+                recSpellPosInList = uint.Parse(splitMessage[3]);
+                //TODO: Hier kommt eigtl onCast() vom Spell hin, aber erstmal hardcoden
+                wipTargetCast(recTargetPosInList, recSpellPosInList);
+                playerList[recPlayerPosInList].reduceCurrentMana(spellList[recSpellPosInList].spellManacost);
                 break;
             case Command.ChangeTarget:
                 //Mir wird das target von jemanden gesagt
@@ -111,6 +121,27 @@ public class gameScript : MonoBehaviour {
         }
     }
 
+    //TODO: Das hier wird zu onCast() vom Spell
+    private void wipTargetCast(uint target, uint spell)
+    {
+        playerScript spellTarget = playerList[target];
+        Spell castedSpell = spellList[spell];
+        switch(spell) {
+            case 1:
+                Debug.Log("DAMAGE: " + castedSpell.spellDmg);
+                spellTarget.reduceCurrentHealth(castedSpell.spellDmg);
+                break;
+            case 2:
+                spellTarget.increaseCurrentHealth(castedSpell.spellHeal);
+                break;
+            case 3:
+                spellTarget.increaseCurrentMana(castedSpell.spellHeal);
+                break;
+            default:
+                break;
+        }
+    }
+
     private void castCubeSummon(float recX, float recY, float recZ)
     {
         Debug.Log("SPEEEEELLL");
@@ -118,24 +149,19 @@ public class gameScript : MonoBehaviour {
         cubePrefab = Instantiate(cubePrefab, summonPos, Quaternion.AngleAxis(90f, Vector3.up));
     }
 
-    public int checkValidTarget()
-    {
-        if (myUiScript.getTarget() != null)
-        {
-            return 0;
-        }
-        return 1;
-    }
-
     public void setTarget(uint playerInList, playerScript newTarget)
     {
         playerList[playerInList].setTarget(newTarget);
-        Debug.Log("hier komm ich an1: " + playerInList + "," + myPosInList);
         if (playerInList == myPosInList)
         {
-            Debug.Log("hier komm ich an2");
             myUiScript.setTarget(newTarget);
         }
+    }
+
+    public void setTarget(playerScript newTarget)
+    {
+        playerList[myPosInList].setTarget(newTarget);
+        myUiScript.setTarget(newTarget);
     }
 
     public uint getMyPosInList()
@@ -185,6 +211,7 @@ public class gameScript : MonoBehaviour {
         newInputScript.initiate(this, this.myNetwork, this.myCamera, this.myUiScript, newPlayer.GetComponent<Rigidbody>(), newPlayer.GetComponent<Animator>());
         playerScript myPlayerScript = newPlayer.GetComponent<playerScript>();
         myPlayerScript.setMainPlayer(true);
+        myPlayerScript.setListPos(myPosInList);
         //Uns selbst in die Liste der Spieler aufnehmen
         playerList[myPosInList] = myPlayerScript;
         //Dem HUD alle Werte geben
@@ -193,16 +220,73 @@ public class gameScript : MonoBehaviour {
         myCamera.myPlayer = newPlayer;
     }
 
+    public playerScript getOwnPlayer()
+    {
+        return playerList[myPosInList];
+    }
+
+    public void tryPointSpellCast(uint spellId, Vector3 point)
+    {
+        //TODO: Out of Range und Cooldown
+        if (getOwnPlayer().getCurrentMana() >= spellList[spellId].spellManacost && getOwnPlayer().getCurrentHealth() >= spellList[spellId].spellHPcost)
+        {
+            //TODO: CDs von Spells muessen auf den Spieler bezogen sein: spellList[spellId].setCD();
+            myNetwork.sendMessage("5;" + myPlayerId + ";" + myPosInList + ";" + point.x + ";" + point.y + ";" + point.z + ";" + spellId);
+        } else
+        {
+            myUiScript.showErrMessage("Irgendein Error! Kein Plan", 1000);
+        }
+    }
+
+    public void tryTargetSpellCast(uint spellId)
+    {
+        //TODO: Out of Range und Cooldown
+        playerScript target = playerList[myPosInList].getTarget();
+        if (target != null) {
+            uint targetInList = target.getListPos();
+            if (getOwnPlayer().getCurrentMana() >= spellList[spellId].spellManacost && getOwnPlayer().getCurrentHealth() >= spellList[spellId].spellHPcost)
+            {
+                myNetwork.sendMessage("6;" + myPlayerId + ";" + myPosInList + ";" + targetInList + ";" + spellId);
+            }else
+            {
+                myUiScript.showErrMessage("Irgendein Error! Kein Plan", 1000);
+            }
+        }else
+        {
+            myUiScript.showErrMessage("Irgendein Error! Kein Plan", 1000);
+        }
+    }
+
+    public void tryFreeSpellCast(uint spellId)
+    {
+        //TODO: Out of Range und Cooldown
+        if (getOwnPlayer().getCurrentMana() >= spellList[spellId].spellManacost && getOwnPlayer().getCurrentHealth() >= spellList[spellId].spellHPcost)
+        {
+            myNetwork.sendMessage("7;" + myPlayerId + ";" + myPosInList + ";" + spellId);
+        }else
+        {
+            myUiScript.showErrMessage("Irgendein Error! Kein Plan", 1000);
+        }
+    }
+
     // Use this for initialization
-    void Start () {
+    void Start() {
         Application.runInBackground = true;
         //TODO: Erstmal nur 10 player erlauben
         playerList = new playerScript[10];
         spellList = new Spell[4];
-        spellList[0] = new Cube();
-        spellList[1] = new Fireblast();
-        spellList[2] = new Heal();
-        spellList[3] = new Innervate();
+        Spell newSpell = ScriptableObject.CreateInstance<Cube>();
+        newSpell.initiate();
+        spellList[0] = newSpell;
+        newSpell = ScriptableObject.CreateInstance<Fireblast>();
+        newSpell.initiate();
+        spellList[1] = newSpell;
+        newSpell = ScriptableObject.CreateInstance<Heal>();
+        newSpell.initiate();
+        spellList[2] = newSpell;
+        newSpell = ScriptableObject.CreateInstance<Innervate>();
+        newSpell.initiate();
+        spellList[3] = newSpell;
     }
 
 	// Update is called once per frame

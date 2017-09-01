@@ -10,9 +10,12 @@ public abstract class Spell : ScriptableObject {
     public int spellDmg;
     public int spellHeal;
     public int spellManacost;
+    public int spellHPcost;
     public int spellCooldown;
+    public int spellCurrCooldown;
     public int spellCasttime;
 
     public abstract void onCast();
+    public abstract void setCD();
     public abstract void initiate();
 }
