@@ -78,21 +78,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Database\Spells\Mage\Fireblast.cs" />
+    <Compile Include="Assets\Database\Spells\Mage\Cube\Cube.cs" />
+    <Compile Include="Assets\Database\Spells\Mage\Fireblast\Fireblast.cs" />
+    <Compile Include="Assets\Database\Spells\Mage\Heal\Heal.cs" />
+    <Compile Include="Assets\Database\Spells\Mage\Innervate\Innervate.cs" />
     <Compile Include="Assets\Database\Spells\Spell.cs" />
-    <Compile Include="Assets\Scripts\Noise.cs" />
     <Compile Include="Assets\Scripts\cameraScript.cs" />
     <Compile Include="Assets\Scripts\chatScript.cs" />
-    <Compile Include="Assets\Scripts\chunkScript.cs" />
     <Compile Include="Assets\Scripts\gameScript.cs" />
     <Compile Include="Assets\Scripts\inputScript.cs" />
     <Compile Include="Assets\Scripts\mainMenuScript.cs" />
-    <Compile Include="Assets\Scripts\mapScript.cs" />
     <Compile Include="Assets\Scripts\networkScript.cs" />
     <Compile Include="Assets\Scripts\playerScript.cs" />
     <Compile Include="Assets\Scripts\spellBarScript.cs" />
     <Compile Include="Assets\Scripts\uiScript.cs" />
-    <Compile Include="Assets\Scripts\unitScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Projectors\ProjectorLight.shader" />
