@@ -58,9 +58,32 @@ public class playerScript : MonoBehaviour {
         return this.currentHealth;
     }
 
+    public int getMaxHealth()
+    {
+        if (this.maximumHealth == 0)
+        {
+            return 100;
+        }
+        else
+        {
+            return this.maximumHealth;
+        }
+    }
+
     public int getCurrentMana()
     {
         return this.currentMana;
+    }
+
+    public int getMaxMana()
+    {
+        if (this.maximumMana == 0) {
+            return 100;
+        } else
+        {
+            return this.maximumMana;
+        }
+        
     }
 
     public void reduceCurrentMana(int newVal)

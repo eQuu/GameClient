@@ -11,10 +11,14 @@ public class uiScript : MonoBehaviour {
     private playerScript myPlayer;
     private Transform selfImage;
     private Transform selfHealth;
+    private Transform selfHealthBar;
     private Transform selfMana;
+    private Transform selfManaBar;
     private playerScript myTarget;
     private Transform targetImage;
+    private Transform targetHealthBar;
     private Transform targetHealth;
+    private Transform targetManaBar;
     private Transform targetMana;
     private spellBarScript mySpellBar;
     private chatScript myChat;
@@ -32,10 +36,14 @@ public class uiScript : MonoBehaviour {
     void Start () {
         selfImage = transform.GetChild(0);
         targetImage = transform.GetChild(1);
-        selfHealth = selfImage.transform.GetChild(0);
-        selfMana = selfImage.transform.GetChild(1);
-        targetHealth = targetImage.transform.GetChild(0);
-        targetMana = targetImage.transform.GetChild(1);
+        selfHealthBar = selfImage.transform.GetChild(0);
+        selfHealth = selfImage.transform.GetChild(1);
+        selfManaBar = selfImage.transform.GetChild(2);
+        selfMana = selfImage.transform.GetChild(3);
+        targetHealthBar = targetImage.transform.GetChild(0);
+        targetHealth = targetImage.transform.GetChild(1);
+        targetManaBar = targetImage.transform.GetChild(2);
+        targetMana = targetImage.transform.GetChild(3);
         mySpellBar = transform.GetChild(2).GetComponent<spellBarScript>();
         myChat = transform.GetChild(3).GetComponent<chatScript>();
         errText = transform.GetChild(4).GetComponent<Text>();
@@ -47,12 +55,16 @@ public class uiScript : MonoBehaviour {
         if (isInitiated)
         {
             selfHealth.GetComponent<Text>().text = myPlayer.getCurrentHealth().ToString();
+            selfHealthBar.localScale = new Vector3((myPlayer.getCurrentHealth()*1.0f/ myPlayer.getMaxHealth()*1.0f), 1, 1);
             selfMana.GetComponent<Text>().text = myPlayer.getCurrentMana().ToString();
+            selfManaBar.localScale = new Vector3((myPlayer.getCurrentMana() * 1.0f / myPlayer.getMaxMana() * 1.0f), 1, 1);
         }
         if (targetImage.gameObject.activeSelf)
         {
             targetHealth.GetComponent<Text>().text = myTarget.getCurrentHealth().ToString();
+            targetHealthBar.localScale = new Vector3((myTarget.getCurrentHealth() * 1.0f / myTarget.getMaxHealth() * 1.0f), 1, 1);
             targetMana.GetComponent<Text>().text = myTarget.getCurrentMana().ToString();
+            targetManaBar.localScale = new Vector3((myTarget.getCurrentMana() * 1.0f / myTarget.getMaxMana() * 1.0f), 1, 1);
         }
 
         //ErrText handlen
